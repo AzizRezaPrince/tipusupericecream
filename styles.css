@@ -1,5 +1,5 @@
 /* ==========================================================================
-   আইসক্রিমওয়ালা (Ice-Creamwala) — Styles & Animations
+   টিপু সুলতানের সুপার স্পেশাল আইসক্রিম — গ্রামের মেলা (Village Fair Theme) Styles
    ========================================================================== */
 
 :root {
@@ -7,24 +7,25 @@
   --font-display: 'Galada', cursive;
   --font-accent: 'Baloo Da 2', cursive;
 
-  /* Color Palette: Twilight Nostalgia & Neon Retro */
-  --bg-dark: #0f0a1c;
-  --bg-card: rgba(26, 20, 48, 0.75);
-  --bg-card-hover: rgba(38, 30, 68, 0.85);
+  /* Vibrant Village Fair Colors: Festive Red, Pink & Yellow Gold */
+  --bg-dark: #140212;
+  --bg-card: rgba(45, 6, 35, 0.82);
+  --bg-card-hover: rgba(65, 10, 50, 0.9);
 
-  --accent-red: #ff3838;
-  --accent-gold: #ffb8b8;
-  --accent-yellow: #fffa65;
-  --accent-cyan: #18dcff;
-  --accent-purple: #7d5fff;
+  --accent-red: #ff0055;
+  --accent-pink: #ff007f;
+  --accent-gold: #ffd700;
+  --accent-yellow: #ffeb3b;
+  --accent-cyan: #00e5ff;
+  --accent-purple: #9c27b0;
 
   --text-main: #ffffff;
-  --text-muted: #cd84f1;
-  --text-dim: #a5b1c2;
+  --text-muted: #ff94c2;
+  --text-dim: #ffb8d9;
 
-  --shadow-glow: 0 0 25px rgba(255, 56, 56, 0.4);
-  --shadow-gold: 0 0 20px rgba(255, 250, 101, 0.3);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.12);
+  --shadow-glow: 0 0 30px rgba(255, 0, 85, 0.6);
+  --shadow-gold: 0 0 25px rgba(255, 235, 59, 0.5);
+  --glass-border: 1.5px solid rgba(255, 0, 127, 0.25);
 
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -52,7 +53,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   ১. অ্যানিমেটেড গোধূলি ব্যাকগ্রাউন্ড (Twilight Village & Road Sky)
+   ১. গ্রামের মেলা গোধূলি পটভূমি (Festive Red-Pink Village Fair Sky)
    -------------------------------------------------------------------------- */
 .sky-background {
   position: fixed;
@@ -68,30 +69,28 @@ body {
 .twilight-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, #090514 0%, #1b0e34 35%, #3d1b46 65%, #6a2542 85%, #2a1120 100%);
+  background: linear-gradient(180deg, #100214 0%, #2d0019 30%, #59002c 60%, #800033 85%, #300014 100%);
 }
 
-/* তারা ও স্পার্কল */
 .stars {
   position: absolute;
   inset: 0;
   background-image: 
     radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 40px 70px, #fffa65, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 160px 120px, #ffcccc, rgba(0,0,0,0)),
-    radial-gradient(1.5px 1.5px at 230px 50px, #ffffff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 300px 90px, #18dcff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 380px 150px, #ffffff, rgba(0,0,0,0));
+    radial-gradient(2.5px 2.5px at 50px 80px, #ffeb3b, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 110px 40px, #ff007f, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 180px 140px, #ffd700, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 260px 60px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2.5px 2.5px at 340px 100px, #00e5ff, rgba(0,0,0,0));
   background-repeat: repeat;
-  background-size: 450px 250px;
-  opacity: 0.65;
-  animation: starsTwinkle 4s infinite alternate ease-in-out;
+  background-size: 400px 220px;
+  opacity: 0.75;
+  animation: starsTwinkle 3s infinite alternate ease-in-out;
 }
 
 @keyframes starsTwinkle {
-  0% { opacity: 0.4; }
-  100% { opacity: 0.85; }
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
 }
 
 .animated-clouds {
@@ -101,8 +100,8 @@ body {
   width: 140%;
   height: 250px;
   background: 
-    radial-gradient(circle at 30% 50%, rgba(255, 120, 150, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 70% 40%, rgba(180, 100, 255, 0.15) 0%, transparent 50%);
+    radial-gradient(circle at 30% 50%, rgba(255, 0, 127, 0.25) 0%, transparent 60%),
+    radial-gradient(circle at 70% 40%, rgba(255, 235, 59, 0.2) 0%, transparent 50%);
   filter: blur(25px);
   animation: cloudDrift 45s infinite linear;
 }
@@ -112,37 +111,60 @@ body {
   100% { transform: translateX(15%); }
 }
 
-/* সুদূর গ্রামীন পাহাড় ও নারকেল গাছ */
+/* নাগরদোলা সিলুয়েট (Nagordola Ferris Wheel) */
+.nagordola-container {
+  position: absolute;
+  right: 5%;
+  bottom: 90px;
+  width: 180px;
+  height: 180px;
+  opacity: 0.45;
+}
+
+.nagordola-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.fair-wheel-ring {
+  animation: spinNagordola 25s infinite linear;
+  transform-origin: center;
+}
+
+@keyframes spinNagordola {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .village-hills {
   position: absolute;
   bottom: 80px;
   width: 100%;
   height: 120px;
-  background: radial-gradient(ellipse at 50% 100%, #150a26 0%, #0c0517 70%);
+  background: radial-gradient(ellipse at 50% 100%, #300019 0%, #17010d 70%);
   border-top-left-radius: 50% 30px;
   border-top-right-radius: 50% 30px;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
-/* রাস্তা */
 .road-surface {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 95px;
-  background: linear-gradient(180deg, #181026 0%, #0d0716 100%);
-  border-top: 3px solid #ff4b5c;
-  box-shadow: 0 -10px 25px rgba(255, 75, 92, 0.15);
+  background: linear-gradient(180deg, #260012 0%, #120008 100%);
+  border-top: 4px solid var(--accent-red);
+  box-shadow: 0 -10px 30px rgba(255, 0, 85, 0.4);
 }
 
 .road-line {
   position: absolute;
   top: 50%;
   width: 100%;
-  height: 4px;
-  background: repeating-linear-gradient(90deg, #fffa65, #fffa65 30px, transparent 30px, transparent 60px);
-  opacity: 0.4;
-  animation: roadMove 2s infinite linear;
+  height: 5px;
+  background: repeating-linear-gradient(90deg, #ffeb3b, #ffeb3b 30px, transparent 30px, transparent 60px);
+  opacity: 0.6;
+  animation: roadMove 1.8s infinite linear;
 }
 
 @keyframes roadMove {
@@ -151,7 +173,26 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   ২. সাইড ট্রিং-ট্রিং বেল বাটন (Horn OK Please Inspired)
+   ২. মেলা ঝালর/পতাকা (Festive Bunting Streamer Banner)
+   -------------------------------------------------------------------------- */
+.fair-bunting-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 60;
+  pointer-events: none;
+}
+
+.bunting-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+}
+
+/* --------------------------------------------------------------------------
+   ৩. সাইড ভাসমান বাইসাইকেল বেল বাটন (Single Moving Bell Icon)
    -------------------------------------------------------------------------- */
 .bell-aside {
   position: fixed;
@@ -165,14 +206,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #ff3838 0%, #c51162 100%);
-  border: 2.5px solid #fffa65;
+  width: 62px;
+  height: 62px;
+  background: linear-gradient(135deg, #ff0055 0%, #ff007f 100%);
+  border: 3px solid #ffeb3b;
   border-radius: 50%;
   color: #ffffff;
   cursor: pointer;
-  box-shadow: 0 10px 30px rgba(255, 56, 56, 0.6), 0 0 20px rgba(255, 250, 101, 0.6);
+  box-shadow: 0 10px 30px rgba(255, 0, 85, 0.7), 0 0 25px rgba(255, 235, 59, 0.8);
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
   user-select: none;
   animation: floatBellBtn 3s infinite ease-in-out;
@@ -180,24 +221,24 @@ body {
 
 @keyframes floatBellBtn {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-10px); }
 }
 
 .bell-btn:hover {
-  transform: scale(1.15) rotate(-5deg);
-  box-shadow: 0 14px 35px rgba(255, 56, 56, 0.8), 0 0 30px rgba(255, 250, 101, 0.9);
+  transform: scale(1.18) rotate(-6deg);
+  box-shadow: 0 15px 40px rgba(255, 0, 85, 0.9), 0 0 35px rgba(255, 235, 59, 1);
 }
 
 .bell-btn:active {
-  transform: scale(0.92);
+  transform: scale(0.9);
 }
 
 .bell-icon-wrapper {
   position: relative;
-  width: 40px;
-  height: 40px;
-  background: #fffa65;
-  color: #c51162;
+  width: 42px;
+  height: 42px;
+  background: #ffeb3b;
+  color: #ff0055;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -205,51 +246,30 @@ body {
 }
 
 .bell-svg {
-  width: 24px;
-  height: 24px;
-  animation: bellShake 1.6s infinite ease-in-out;
+  width: 25px;
+  height: 25px;
+  animation: bellShake 1.5s infinite ease-in-out;
 }
 
 @keyframes bellShake {
   0%, 70%, 100% { transform: rotate(0); }
-  75% { transform: rotate(20deg); }
-  80% { transform: rotate(-20deg); }
-  85% { transform: rotate(14deg); }
+  75% { transform: rotate(22deg); }
+  80% { transform: rotate(-22deg); }
+  85% { transform: rotate(15deg); }
   90% { transform: rotate(-10deg); }
 }
 
-.bell-text-group {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-
-.bell-heading {
-  font-family: var(--font-accent);
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #fffa65;
-  line-height: 1.1;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-
-.bell-subtext {
-  font-size: 0.8rem;
-  opacity: 0.95;
-  font-weight: 500;
-}
-
 /* --------------------------------------------------------------------------
-   ৩. হেডার ও নেভিগেশন (Top Bar)
+   ৪. হেডার ও নেভিগেশন (Top Bar)
    -------------------------------------------------------------------------- */
 .top-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 32px;
-  background: rgba(15, 10, 28, 0.6);
+  padding: 22px 32px 14px;
+  background: rgba(20, 2, 18, 0.7);
   backdrop-filter: blur(12px);
-  border-bottom: var(--glass-border);
+  border-bottom: 1.5px solid rgba(255, 0, 127, 0.3);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -265,77 +285,50 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  border: var(--glass-border);
-  padding: 6px 14px;
+  background: rgba(255, 235, 59, 0.15);
+  border: 1px solid rgba(255, 235, 59, 0.4);
+  padding: 6px 16px;
   border-radius: 30px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--accent-yellow);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffeb3b;
+  box-shadow: 0 0 12px rgba(255, 235, 59, 0.3);
 }
 
 .listeners-badge {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(46, 213, 115, 0.12);
-  border: 1px solid rgba(46, 213, 115, 0.3);
-  padding: 6px 14px;
+  background: rgba(255, 0, 127, 0.18);
+  border: 1px solid rgba(255, 0, 127, 0.4);
+  padding: 6px 16px;
   border-radius: 30px;
-  font-size: 0.88rem;
-  color: #2ed573;
-  font-weight: 600;
+  font-size: 0.9rem;
+  color: #ff80bf;
+  font-weight: 700;
 }
 
 .live-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #2ed573;
+  width: 9px;
+  height: 9px;
+  background-color: #ff007f;
   border-radius: 50%;
-  box-shadow: 0 0 10px #2ed573;
-  animation: pulseDot 1.5s infinite;
+  box-shadow: 0 0 12px #ff007f;
+  animation: pulseDot 1.4s infinite;
 }
 
 @keyframes pulseDot {
   0% { transform: scale(0.9); opacity: 0.7; }
-  50% { transform: scale(1.3); opacity: 1; }
+  50% { transform: scale(1.35); opacity: 1; }
   100% { transform: scale(0.9); opacity: 0.7; }
 }
 
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.header-action-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  border: var(--glass-border);
-  color: var(--text-main);
-  padding: 8px 16px;
-  border-radius: 30px;
-  font-family: var(--font-primary);
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition-fast);
-}
-
-.header-action-btn:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: var(--accent-yellow);
-  color: var(--accent-yellow);
-}
-
 /* --------------------------------------------------------------------------
-   ৪. ব্রান্ডিং ও প্রধান শিরোনাম
+   ৫. ব্রান্ডিং ও প্রধান শিরোনাম (Red-Pink Glowing Title)
    -------------------------------------------------------------------------- */
 .branding-section {
   text-align: center;
-  padding: 24px 16px 12px;
+  padding: 20px 16px 12px;
 }
 
 .main-title {
@@ -345,30 +338,32 @@ body {
 }
 
 .title-top {
-  font-size: 1.1rem;
-  color: var(--accent-yellow);
+  font-size: 1.15rem;
+  color: #ffeb3b;
   letter-spacing: 2px;
-  font-weight: 600;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
 }
 
 .title-main {
   font-family: var(--font-display);
-  font-size: 3.8rem;
-  background: linear-gradient(135deg, #fffa65 0%, #ff4b5c 50%, #cd84f1 100%);
+  font-size: 4rem;
+  background: linear-gradient(135deg, #ffeb3b 0%, #ff0055 50%, #ff007f 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.1;
-  text-shadow: 0 10px 25px rgba(255, 75, 92, 0.3);
+  filter: drop-shadow(0 6px 15px rgba(255, 0, 85, 0.6));
 }
 
 .title-sub {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text-dim);
   margin-top: 4px;
+  font-weight: 600;
 }
 
 /* --------------------------------------------------------------------------
-   ৫. আইসক্রিম ভ্যান ও ফ্লেভার গ্রিড (Van Stage)
+   ৬. আইসক্রিম ভ্যান (Van Stage)
    -------------------------------------------------------------------------- */
 .van-stage {
   position: relative;
@@ -385,7 +380,7 @@ body {
   width: 100%;
   max-width: 580px;
   margin-bottom: 20px;
-  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 18px 35px rgba(0,0,0,0.6));
 }
 
 .van-svg {
@@ -394,7 +389,6 @@ body {
   overflow: visible;
 }
 
-/* ভ্যানের চাকা ঘোরার অ্যানিমেশন */
 .van-wrapper.is-moving .spoke {
   animation: spinSpokes 1s infinite linear;
   transform-origin: center;
@@ -405,7 +399,6 @@ body {
   100% { transform: rotate(360deg); }
 }
 
-/* ঠান্ডা ধোঁয়া / Steam Particle */
 .steam-container {
   position: absolute;
   top: 25%;
@@ -417,9 +410,9 @@ body {
   position: absolute;
   width: 25px;
   height: 25px;
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.45);
   border-radius: 50%;
-  filter: blur(8px);
+  filter: blur(7px);
   animation: mistRise 3s infinite ease-out;
 }
 
@@ -429,11 +422,11 @@ body {
 
 @keyframes mistRise {
   0% { transform: translateY(0) scale(0.6); opacity: 0; }
-  50% { opacity: 0.6; }
-  100% { transform: translateY(-60px) scale(1.5); opacity: 0; }
+  50% { opacity: 0.7; }
+  100% { transform: translateY(-65px) scale(1.6); opacity: 0; }
 }
 
-/* উড়ান্ত সুরের নোটস (Floating Notes) */
+/* উড়ান্ত আইসক্রিম ও নোটস (Floating Items) */
 .floating-notes-layer {
   position: absolute;
   inset: 0;
@@ -443,89 +436,15 @@ body {
 
 .floating-note {
   position: absolute;
-  font-size: 1.5rem;
-  color: var(--accent-yellow);
-  text-shadow: 0 0 10px var(--accent-yellow);
+  font-size: 1.6rem;
+  color: #ffeb3b;
+  text-shadow: 0 0 12px #ff0055;
   animation: floatNoteUp 2.5s forwards ease-out;
 }
 
 @keyframes floatNoteUp {
   0% { transform: translateY(0) scale(0.5) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(-120px) scale(1.4) rotate(45deg); opacity: 0; }
-}
-
-/* --------------------------------------------------------------------------
-   ৬. আইসক্রিম ফ্লেভার নির্বাচন মেনু (Mood Selector)
-   -------------------------------------------------------------------------- */
-.icecream-menu-container {
-  width: 100%;
-  background: var(--bg-card);
-  backdrop-filter: blur(16px);
-  border: var(--glass-border);
-  border-radius: var(--radius-lg);
-  padding: 20px;
-  margin-top: -10px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-}
-
-.menu-heading {
-  font-family: var(--font-accent);
-  font-size: 1.15rem;
-  color: var(--accent-gold);
-  margin-bottom: 14px;
-  text-align: center;
-}
-
-.flavor-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 12px;
-}
-
-.flavor-card {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 10px 14px;
-  border-radius: var(--radius-md);
-  color: var(--text-main);
-  cursor: pointer;
-  transition: var(--transition-fast);
-  text-align: left;
-}
-
-.flavor-card:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: var(--accent-yellow);
-  transform: translateY(-3px);
-}
-
-.flavor-card.active {
-  background: linear-gradient(135deg, rgba(255, 75, 92, 0.25) 0%, rgba(125, 95, 255, 0.25) 100%);
-  border: 1.5px solid var(--accent-yellow);
-  box-shadow: 0 5px 15px rgba(255, 250, 101, 0.2);
-}
-
-.flavor-icon {
-  font-size: 1.6rem;
-}
-
-.flavor-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.flavor-name {
-  font-weight: 700;
-  font-size: 0.95rem;
-  line-height: 1.2;
-}
-
-.flavor-tag {
-  font-size: 0.75rem;
-  color: var(--text-dim);
+  100% { transform: translateY(-130px) scale(1.5) rotate(45deg); opacity: 0; }
 }
 
 /* --------------------------------------------------------------------------
@@ -533,7 +452,7 @@ body {
    -------------------------------------------------------------------------- */
 .bumper-banner {
   max-width: 750px;
-  margin: 20px auto;
+  margin: 20px auto 35px;
   padding: 0 16px;
 }
 
@@ -541,34 +460,34 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: linear-gradient(90deg, #2a1120 0%, #3d1b46 50%, #2a1120 100%);
-  border: 1px stroke var(--accent-gold);
-  border-left: 4px solid var(--accent-red);
-  padding: 12px 20px;
+  background: linear-gradient(90deg, #40001a 0%, #660033 50%, #40001a 100%);
+  border: 1.5px solid #ff007f;
+  border-left: 5px solid #ffeb3b;
+  padding: 14px 22px;
   border-radius: var(--radius-md);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 0, 85, 0.4);
 }
 
 .bumper-quote-icon {
-  font-size: 2rem;
-  color: var(--accent-yellow);
+  font-size: 2.2rem;
+  color: #ffeb3b;
   line-height: 1;
 }
 
 .bumper-text {
   flex: 1;
   font-family: var(--font-accent);
-  font-size: 1.05rem;
-  color: var(--accent-yellow);
-  font-weight: 600;
+  font-size: 1.1rem;
+  color: #ffeb3b;
+  font-weight: 700;
 }
 
 .bumper-next-btn {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   border: none;
   color: #ffffff;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -583,17 +502,17 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   ৮. মিউজিক প্লেয়ার ডক (Player Deck Panel)
+   ৮. মিউজিক প্লেয়ার ডক (Vibrant Red-Pink Player Deck)
    -------------------------------------------------------------------------- */
 .player-dock {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(15, 10, 28, 0.92);
+  background: rgba(26, 2, 22, 0.95);
   backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
+  border-top: 2px solid #ff007f;
+  box-shadow: 0 -10px 45px rgba(255, 0, 85, 0.5);
   z-index: 80;
   padding: 10px 24px 14px;
 }
@@ -603,7 +522,7 @@ body {
   height: 35px;
   display: block;
   margin-bottom: 6px;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .player-inner {
@@ -615,11 +534,10 @@ body {
   gap: 24px;
 }
 
-/* ক্যাসেট/ডিস্ক ঘুরন্ত অ্যানিমেশন */
 .disc-container {
   position: relative;
-  width: 64px;
-  height: 64px;
+  width: 66px;
+  height: 66px;
 }
 
 .disc-turntable {
@@ -627,9 +545,9 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 3px solid #ff4b5c;
+  border: 3.5px solid #ff0055;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(255, 75, 92, 0.4);
+  box-shadow: 0 0 20px rgba(255, 0, 85, 0.6);
 }
 
 .disc-turntable.is-playing {
@@ -654,12 +572,11 @@ body {
   transform: translate(-50%, -50%);
   width: 16px;
   height: 16px;
-  background: #ffffff;
-  border: 3px solid #2d3436;
+  background: #ffeb3b;
+  border: 3px solid #120008;
   border-radius: 50%;
 }
 
-/* ট্র‍্যাক তথ্য ও সিকবার */
 .track-meta-section {
   display: flex;
   flex-direction: column;
@@ -668,7 +585,7 @@ body {
 }
 
 .track-title {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   white-space: nowrap;
   overflow: hidden;
@@ -677,7 +594,7 @@ body {
 }
 
 .track-artist {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
@@ -692,9 +609,9 @@ body {
 }
 
 .time-display {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--text-dim);
-  min-width: 35px;
+  min-width: 38px;
   font-variant-numeric: tabular-nums;
 }
 
@@ -702,7 +619,7 @@ body {
   position: relative;
   flex: 1;
   height: 6px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.18);
   border-radius: 4px;
   overflow: hidden;
   cursor: pointer;
@@ -714,7 +631,7 @@ body {
   top: 0;
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, var(--accent-red), var(--accent-yellow));
+  background: linear-gradient(90deg, #ff0055, #ffeb3b);
   border-radius: 4px;
 }
 
@@ -738,8 +655,8 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.06);
-  border: var(--glass-border);
+  background: rgba(255, 0, 127, 0.15);
+  border: 1px solid rgba(255, 0, 127, 0.35);
   padding: 4px 12px 4px 4px;
   border-radius: 30px;
 }
@@ -747,16 +664,16 @@ body {
 .volume-slider {
   width: 75px;
   height: 4px;
-  accent-color: var(--accent-yellow);
+  accent-color: #ffeb3b;
   cursor: pointer;
 }
 
 .ctrl-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: var(--glass-border);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 0, 127, 0.3);
   color: var(--text-main);
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -766,27 +683,22 @@ body {
 }
 
 .ctrl-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: var(--accent-yellow);
-  transform: scale(1.05);
-}
-
-.ctrl-btn.active {
-  color: var(--accent-yellow);
-  border-color: var(--accent-yellow);
+  background: rgba(255, 0, 127, 0.3);
+  color: #ffeb3b;
+  transform: scale(1.06);
 }
 
 .main-play-btn {
-  width: 52px;
-  height: 52px;
-  background: linear-gradient(135deg, var(--accent-red) 0%, #c51162 100%);
-  border: none;
-  box-shadow: 0 0 20px rgba(255, 56, 56, 0.5);
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(135deg, #ff0055 0%, #ff007f 100%);
+  border: 2px solid #ffeb3b;
+  box-shadow: 0 0 25px rgba(255, 0, 85, 0.7);
 }
 
 .main-play-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(255, 56, 56, 0.8);
+  transform: scale(1.12);
+  box-shadow: 0 0 35px rgba(255, 0, 85, 0.9);
   color: #ffffff;
 }
 
@@ -795,7 +707,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   ৯. স্লাইডিং প্লেলিস্ট প্যানেল (Playlist Drawer)
+   ৯. স্লাইডিং প্লেলিস্ট প্যানেল (Red-Pink Playlist Drawer)
    -------------------------------------------------------------------------- */
 .playlist-panel {
   position: fixed;
@@ -804,11 +716,11 @@ body {
   width: 420px;
   max-width: calc(100vw - 48px);
   max-height: 480px;
-  background: rgba(18, 12, 31, 0.95);
+  background: rgba(26, 2, 22, 0.96);
   backdrop-filter: blur(25px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1.5px solid #ff007f;
   border-radius: var(--radius-lg);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 0, 85, 0.3);
   z-index: 75;
   display: flex;
   flex-direction: column;
@@ -822,7 +734,7 @@ body {
 
 .playlist-header {
   padding: 16px 20px;
-  border-bottom: var(--glass-border);
+  border-bottom: 1px solid rgba(255, 0, 127, 0.25);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -837,16 +749,16 @@ body {
 
 .playlist-title-group h3 {
   font-family: var(--font-accent);
-  font-size: 1.15rem;
-  color: var(--accent-gold);
+  font-size: 1.2rem;
+  color: #ffeb3b;
 }
 
 .track-count-badge {
   font-size: 0.8rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 0, 127, 0.25);
   padding: 3px 10px;
   border-radius: 20px;
-  color: var(--text-dim);
+  color: #ffb8d9;
 }
 
 .close-playlist-btn {
@@ -856,7 +768,7 @@ body {
   background: none;
   border: none;
   color: var(--text-dim);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   cursor: pointer;
 }
 
@@ -867,18 +779,18 @@ body {
 
 .search-box input {
   width: 100%;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 0, 127, 0.3);
   padding: 8px 36px 8px 14px;
   border-radius: 20px;
   color: #ffffff;
   font-family: var(--font-primary);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   outline: none;
 }
 
 .search-box input:focus {
-  border-color: var(--accent-yellow);
+  border-color: #ffeb3b;
 }
 
 .search-box svg {
@@ -910,17 +822,17 @@ body {
 }
 
 .playlist-item:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 0, 127, 0.15);
 }
 
 .playlist-item.active {
-  background: rgba(255, 75, 92, 0.18);
-  border-left: 4px solid var(--accent-red);
+  background: rgba(255, 0, 85, 0.28);
+  border-left: 5px solid #ff0055;
 }
 
 .item-thumb {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -939,127 +851,12 @@ body {
 }
 
 .item-artist {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--text-dim);
 }
 
 /* --------------------------------------------------------------------------
-   ১০. কাস্টম মোডাল (Add Song Modal Dialog)
-   -------------------------------------------------------------------------- */
-.modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(10px);
-  z-index: 200;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.modal-card {
-  width: 100%;
-  max-width: 480px;
-  background: #181028;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.modal-header h3 {
-  font-family: var(--font-accent);
-  font-size: 1.3rem;
-  color: var(--accent-gold);
-}
-
-.modal-close-btn {
-  background: none;
-  border: none;
-  color: var(--text-dim);
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 16px;
-}
-
-.form-group label {
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.form-group input, .form-group select {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 10px 14px;
-  border-radius: var(--radius-sm);
-  color: #ffffff;
-  font-family: var(--font-primary);
-  font-size: 0.95rem;
-  outline: none;
-}
-
-.form-group input:focus, .form-group select:focus {
-  border-color: var(--accent-yellow);
-}
-
-.form-hint {
-  font-size: 0.78rem;
-  color: var(--text-dim);
-}
-
-.modal-footer {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  margin-top: 24px;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--accent-red), #c51162);
-  border: none;
-  color: #ffffff;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: var(--text-main);
-  padding: 10px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
-/* লুকানো ইউটিউব আইফ্রেম */
-.youtube-player-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  pointer-events: none;
-  overflow: hidden;
-  bottom: 0;
-}
-
-/* --------------------------------------------------------------------------
-   ১১. রেসপনসিভ মিডিয়া কোয়ারি (Responsive Mobile & Tablet Layout)
+   ১০. রেসপনসিভ মিডিয়া কোয়ারি (Responsive Mobile Layout)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   .top-header {
@@ -1078,15 +875,12 @@ body {
   }
 
   .bell-btn {
-    padding: 10px 16px;
-  }
-
-  .bell-subtext {
-    display: none;
+    width: 52px;
+    height: 52px;
   }
 
   .title-main {
-    font-size: 2.6rem;
+    font-size: 2.7rem;
   }
 
   .player-inner {
