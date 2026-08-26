@@ -22,95 +22,154 @@ function formatBnTime(seconds) {
 
 // ৩. বাংলা নস্টালজিক বাম্পার উক্তি (Bangladeshi Roadside Slogans)
 const bumperQuotes = [
-  "টিপু সুলতানের সুপার স্পেশাল আইসক্রিম — ঠান্ডা খান, মন শান্ত করুন!",
+  "টিপু সুলতানের সুপার স্পেশাল আইসক্রিম — ১০ টাকার ললি, সুরের ভেলায় চলি!",
   "আইসক্রিম ঠান্ডা, পরান ঠান্ডা! আস্তে চলেন, সেরা বাংলা গান শোনেন।",
-  "১০ টাকার ললি, সুরের ভেলায় চলি! পাপী মন, ঠান্ডা আইসক্রিম খা।",
   "বাপের পথ ধরো, সাবধানে গাড়ি চালাও আর আইসক্রিম খাও!",
   "প্রেমের চেয়ে টিপু সুলতানের কুলফি ভালো, পরান জুড়ায়।",
   "সুর আর ঠান্ডা আইসক্রিম একসাথে — নস্টালজিয়া বাংলা গান।"
 ];
 
-// ৪. প্লেলিস্টের গানসমূহ (Tracks in Playlist)
+// ৪. ইউজারের নিজস্ব প্লেলিস্টের আসল গানসমূহ (Exact Songs from User Playlist)
 const userPlaylistTracks = [
   {
-    id: "K1cQ7Y7_1gY",
+    id: "7ogrlI6VD9k",
     index: 0,
-    title: "সেই তুমি (Sei Tumi)",
-    artist: "এলআরবি (LRB / আইয়ুব বাচ্চু)",
-    flavor: "মালাই কুলফি",
-    cover: "https://img.youtube.com/vi/K1cQ7Y7_1gY/hqdefault.jpg"
+    title: "তরমুজ ফাটা লাল — নার্গিস",
+    artist: "Chenasur / নার্গিস",
+    cover: "https://img.youtube.com/vi/7ogrlI6VD9k/hqdefault.jpg"
   },
   {
-    id: "nK9Xn_jGZpU",
+    id: "CnZLZh2zL6Y",
     index: 1,
-    title: "ফিরিয়ে দাও (Firie Dao)",
-    artist: "মাইলস (Miles)",
-    flavor: "অরেঞ্জ ললি",
-    cover: "https://img.youtube.com/vi/nK9Xn_jGZpU/hqdefault.jpg"
+    title: "খালী বাড়ী — নার্গিস (Khali Bari)",
+    artist: "Sumon Recording / নার্গিস",
+    cover: "https://img.youtube.com/vi/CnZLZh2zL6Y/hqdefault.jpg"
   },
   {
-    id: "bX7C-X4Z98U",
+    id: "HrKw22jorMQ",
     index: 2,
-    title: "তারায় তারায় রটিয়ে দেব (Taray Taray)",
-    artist: "নগর বাউল জেমস (Nagar Baul James)",
-    flavor: "চকলেট বার",
-    cover: "https://img.youtube.com/vi/bX7C-X4Z98U/hqdefault.jpg"
+    title: "ছক্কা মাইরা দিল রে — নার্গিস",
+    artist: "Sumon Recording / নার্গিস",
+    cover: "https://img.youtube.com/vi/HrKw22jorMQ/hqdefault.jpg"
   },
   {
-    id: "u9R3P2g_nJ0",
+    id: "4zIY0E1bYA4",
     index: 3,
-    title: "অনিকেত প্রান্তর (Oniket Prantor)",
-    artist: "আর্টসেল (Artcell)",
-    flavor: "শেল অ্যান্ড টিউব",
-    cover: "https://img.youtube.com/vi/u9R3P2g_nJ0/hqdefault.jpg"
+    title: "তুমি আইবা আইবারে বন্ধু — সোহাগ দেওয়ান",
+    artist: "Raju Ahmed / Shuhag Dewan",
+    cover: "https://img.youtube.com/vi/4zIY0E1bYA4/hqdefault.jpg"
   },
   {
-    id: "c8H6P4Y7eG0",
+    id: "UhfYZPNR_Co",
     index: 4,
-    title: "সে যে বসে আছে (She Je Bose Ache)",
-    artist: "অর্ণব (Arnob)",
-    flavor: "কাপ আইসক্রিম",
-    cover: "https://img.youtube.com/vi/c8H6P4Y7eG0/hqdefault.jpg"
+    title: "আমি এতো কষ্ট পাইতাম নারে — জুলেখা সরকার",
+    artist: "black cat24 / Julekha Sorkar",
+    cover: "https://img.youtube.com/vi/UhfYZPNR_Co/hqdefault.jpg"
   },
   {
-    id: "k8a8e3Gz4kM",
+    id: "uQz5ZWiLP4M",
     index: 5,
-    title: "আমাকে আমার মতো থাকতে দাও",
-    artist: "অনুপম রায় (Anupam Roy)",
-    flavor: "ম্যাঙ্গো বার",
-    cover: "https://img.youtube.com/vi/k8a8e3Gz4kM/hqdefault.jpg"
+    title: "মন বাগানে ফুইটাছে ফুল — জুলেখা সরকার",
+    artist: "Ratan Telicom / Julekha Sorkar",
+    cover: "https://img.youtube.com/vi/uQz5ZWiLP4M/hqdefault.jpg"
   },
   {
-    id: "x7b2E_81n9Q",
+    id: "_HhNjXStsmA",
     index: 6,
-    title: "পৃথিবীটা নাকি ছোট হতে হতে",
-    artist: "মহীনের ঘোড়াগুলি (Moheener Ghoraguli)",
-    flavor: "স্পেশাল কুলফি",
-    cover: "https://img.youtube.com/vi/x7b2E_81n9Q/hqdefault.jpg"
+    title: "হৃদয়ে মারলি প্রেমের ছুড়ি রে — সন্ধ্যা রানী দাস",
+    artist: "Sandha Rani Das",
+    cover: "https://img.youtube.com/vi/_HhNjXStsmA/hqdefault.jpg"
   },
   {
-    id: "Y0vJ7F5Lg9k",
+    id: "_WIjUahd1Ag",
     index: 7,
-    title: "বারান্দায় রোদ্দুর (Baranday Roddur)",
-    artist: "ভূমি (Bhoomi)",
-    flavor: "মালাই কুলফি",
-    cover: "https://img.youtube.com/vi/Y0vJ7F5Lg9k/hqdefault.jpg"
+    title: "বন্ধুরে তোর নতুন গাড়ির চাক্কা — নার্গিস",
+    artist: "Bondhu Products / নার্গিস",
+    cover: "https://img.youtube.com/vi/_WIjUahd1Ag/hqdefault.jpg"
   },
   {
-    id: "x5v6F_72nM8",
+    id: "IfDSwMCLYDQ",
     index: 8,
-    title: "বন্দে মায়া লাগাইছে",
-    artist: "শাহ আব্দুল করিম",
-    flavor: "অরেঞ্জ ললি",
-    cover: "https://img.youtube.com/vi/x5v6F_72nM8/hqdefault.jpg"
+    title: "মন বাগনে ফুইটাছে ফুল — জুলেখা সরকার",
+    artist: "BAUL ELAKA",
+    cover: "https://img.youtube.com/vi/IfDSwMCLYDQ/hqdefault.jpg"
   },
   {
-    id: "d8e7c_91gM0",
+    id: "M4Gam95KNng",
     index: 9,
-    title: "নাসেক নাসেক (Nasek Nasek)",
-    artist: "কোক স্টুডিও বাংলা",
-    flavor: "চকলেট বার",
-    cover: "https://img.youtube.com/vi/d8e7c_91gM0/hqdefault.jpg"
+    title: "আমি সাজাবো তোমারে — স্বপ্না",
+    artist: "Music Heaven / স্বপ্না",
+    cover: "https://img.youtube.com/vi/M4Gam95KNng/hqdefault.jpg"
+  },
+  {
+    id: "4USZnZC3Ij4",
+    index: 10,
+    title: "ভালোবেসে ব্যথা যদি দাও — নিতু বালা",
+    artist: "Nitu Bala Official",
+    cover: "https://img.youtube.com/vi/4USZnZC3Ij4/hqdefault.jpg"
+  },
+  {
+    id: "E2ToAW9bgGQ",
+    index: 11,
+    title: "কষ্ট দিলে সয়না যত — বাউলা শারমিন",
+    artist: "SHOUROV media / Sharmin",
+    cover: "https://img.youtube.com/vi/E2ToAW9bgGQ/hqdefault.jpg"
+  },
+  {
+    id: "mG3--z01ZTM",
+    index: 12,
+    title: "তুমি এতো বছর পর আইয়া — বাউল শারমিন",
+    artist: "MH Baul Studio",
+    cover: "https://img.youtube.com/vi/mG3--z01ZTM/hqdefault.jpg"
+  },
+  {
+    id: "yS6VPWAmRAc",
+    index: 13,
+    title: "এক গোড়া মোটরের তিন ইঞ্চি পাইপ — নার্গিস আক্তার",
+    artist: "RX Dancer Raja / Nargis",
+    cover: "https://img.youtube.com/vi/yS6VPWAmRAc/hqdefault.jpg"
+  },
+  {
+    id: "goUOgizBdQg",
+    index: 14,
+    title: "দাদী আমায় দিসনা বিয়া — গাওনের আসর",
+    artist: "Ganer Ashor",
+    cover: "https://img.youtube.com/vi/goUOgizBdQg/hqdefault.jpg"
+  },
+  {
+    id: "uOLXNdl5_PA",
+    index: 15,
+    title: "মলম লাগাইয়া দিলো — নার্গিস",
+    artist: "Sb Abdullah / Nargis",
+    cover: "https://img.youtube.com/vi/uOLXNdl5_PA/hqdefault.jpg"
+  },
+  {
+    id: "WlaFpeJCuy8",
+    index: 16,
+    title: "টাংকি ঝালাই (Tanki Faitta Jay) — নার্গিস",
+    artist: "RX Dancer Raja / Nargis",
+    cover: "https://img.youtube.com/vi/WlaFpeJCuy8/hqdefault.jpg"
+  },
+  {
+    id: "2S9HAV4rEl0",
+    index: 17,
+    title: "আজ রাতে তোমার আমার খেলা ফাইনাল — নার্গিস আক্তার",
+    artist: "Hero Sohel / Nargis",
+    cover: "https://img.youtube.com/vi/2S9HAV4rEl0/hqdefault.jpg"
+  },
+  {
+    id: "PkUQC2a454I",
+    index: 18,
+    title: "ঘন ঘন প্যাডেল মারে — বাংলা নিউ সং",
+    artist: "Chenasur",
+    cover: "https://img.youtube.com/vi/PkUQC2a454I/hqdefault.jpg"
+  },
+  {
+    id: "cHoGpNAf6xU",
+    index: 19,
+    title: "আমার উঠছে পুড়া যৌবন জ্বালা — নার্গিস",
+    artist: "A TO Z / Nargis",
+    cover: "https://img.youtube.com/vi/cHoGpNAf6xU/hqdefault.jpg"
   }
 ];
 
@@ -180,17 +239,13 @@ function playTringTringBell() {
   if (!audioCtx) return;
 
   const now = audioCtx.currentTime;
-
-  // বাইসাইকেলের ডাবল মেটালিক স্ট্রাইক "ট্রিং… ট্রিং!" (Rapid double tap)
   playBicycleBellStrike(now, 1420);
   playBicycleBellStrike(now + 0.08, 1450);
-  
   playBicycleBellStrike(now + 0.28, 1420);
   playBicycleBellStrike(now + 0.36, 1450);
 }
 
 function playBicycleBellStrike(startTime, baseFreq) {
-  // মেটালিক ব্রাস ওভারটোন (Fundamental + Harmonic frequencies)
   const freqs = [baseFreq, baseFreq * 1.58, baseFreq * 2.24];
   
   freqs.forEach((freq, idx) => {
@@ -262,7 +317,35 @@ function onPlayerReady(event) {
     ytPlayer.unMute();
     ytPlayer.setVolume(currentVolume);
   }
+  
+  // ইউটিউব প্লেলিস্টের সমস্ত ট্র্যাক আইডি সিঙ্ক করা
+  syncFullYouTubePlaylist();
   updateTrackUI(currentTrackIndex);
+}
+
+function syncFullYouTubePlaylist() {
+  if (!ytPlayer || !ytPlayer.getPlaylist) return;
+  const playlistIds = ytPlayer.getPlaylist();
+  
+  if (playlistIds && playlistIds.length > 0) {
+    // যদি ইউটিউব API থেকে ৫৫টি গানের পুরো লিস্ট পাওয়া যায়, তা সিঙ্ক করা
+    const newTracks = playlistIds.map((id, idx) => {
+      const existing = currentPlaylist.find(t => t.id === id);
+      if (existing) {
+        return { ...existing, index: idx };
+      }
+      return {
+        id: id,
+        index: idx,
+        title: `প্লেলিস্ট গান #${toBnDigits(idx + 1)}`,
+        artist: "টিপু সুলতানের প্লেলিস্ট",
+        cover: `https://img.youtube.com/vi/${id}/hqdefault.jpg`
+      };
+    });
+    
+    currentPlaylist = newTracks;
+    renderPlaylistUI();
+  }
 }
 
 function onPlayerStateChange(event) {
@@ -286,6 +369,14 @@ function syncTrackMetadata() {
     if (data && data.title) {
       elements.trackTitle.textContent = data.title;
       if (data.author) elements.trackArtist.textContent = data.author;
+      
+      // বর্তমান গানের নাম আপডেট করা
+      if (currentPlaylist[currentTrackIndex]) {
+        currentPlaylist[currentTrackIndex].title = data.title;
+        if (data.author) currentPlaylist[currentTrackIndex].artist = data.author;
+        renderPlaylistUI();
+      }
+
       if (data.video_id) {
         elements.albumArt.src = `https://img.youtube.com/vi/${data.video_id}/hqdefault.jpg`;
       }
