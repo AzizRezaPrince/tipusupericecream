@@ -163,7 +163,7 @@ const elements = {
 };
 
 // --------------------------------------------------------------------------
-// ৬. Web Audio API — ট্রিং-ট্রিং ব্রাস বেল সাউন্ড (Brass Bell Synth)
+// ৬. Web Audio API — বাইসাইকেল ট্রিং-ট্রিং বেল সাউন্ড (Authentic Bicycle Bell)
 // --------------------------------------------------------------------------
 function initAudioContext() {
   if (!audioCtx) {
@@ -180,29 +180,35 @@ function playTringTringBell() {
   if (!audioCtx) return;
 
   const now = audioCtx.currentTime;
-  playBellChime(now);
-  playBellChime(now + 0.12);
-  playBellChime(now + 0.35);
-  playBellChime(now + 0.47);
+
+  // বাইসাইকেলের ডাবল মেটালিক স্ট্রাইক "ট্রিং… ট্রিং!" (Rapid double tap)
+  playBicycleBellStrike(now, 1420);
+  playBicycleBellStrike(now + 0.08, 1450);
+  
+  playBicycleBellStrike(now + 0.28, 1420);
+  playBicycleBellStrike(now + 0.36, 1450);
 }
 
-function playBellChime(startTime) {
-  const freqs = [1800, 2400, 3200];
-  freqs.forEach(freq => {
+function playBicycleBellStrike(startTime, baseFreq) {
+  // মেটালিক ব্রাস ওভারটোন (Fundamental + Harmonic frequencies)
+  const freqs = [baseFreq, baseFreq * 1.58, baseFreq * 2.24];
+  
+  freqs.forEach((freq, idx) => {
     const osc = audioCtx.createOscillator();
     const gain = audioCtx.createGain();
 
     osc.type = 'sine';
     osc.frequency.setValueAtTime(freq, startTime);
 
-    gain.gain.setValueAtTime(0.3, startTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.25);
+    const initialGain = idx === 0 ? 0.45 : 0.2;
+    gain.gain.setValueAtTime(initialGain, startTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.35);
 
     osc.connect(gain);
     gain.connect(audioCtx.destination);
 
     osc.start(startTime);
-    osc.stop(startTime + 0.25);
+    osc.stop(startTime + 0.35);
   });
 }
 
