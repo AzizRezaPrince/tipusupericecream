@@ -111,14 +111,15 @@ body {
   100% { transform: translateX(15%); }
 }
 
-/* নাগরদোলা সিলুয়েট (Nagordola Ferris Wheel) */
+/* নাগরদোলা সুস্পষ্ট ও বড় সিলুয়েট (Big & Clear Nagordola Wheel) */
 .nagordola-container {
   position: absolute;
-  right: 5%;
-  bottom: 90px;
-  width: 180px;
-  height: 180px;
-  opacity: 0.45;
+  right: 3%;
+  bottom: 85px;
+  width: 310px;
+  height: 310px;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 20px rgba(255, 235, 59, 0.5));
 }
 
 .nagordola-svg {
@@ -127,8 +128,8 @@ body {
 }
 
 .fair-wheel-ring {
-  animation: spinNagordola 25s infinite linear;
-  transform-origin: center;
+  animation: spinNagordola 22s infinite linear;
+  transform-origin: 150px 140px;
 }
 
 @keyframes spinNagordola {
@@ -426,7 +427,6 @@ body {
   100% { transform: translateY(-65px) scale(1.6); opacity: 0; }
 }
 
-/* উড়ান্ত আইসক্রিম ও নোটস (Floating Items) */
 .floating-notes-layer {
   position: absolute;
   inset: 0;
@@ -856,7 +856,23 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   ১০. রেসপনসিভ মিডিয়া কোয়ারি (Responsive Mobile Layout)
+   ১০. লুকানো ইউটিউব আইফ্রেম কন্টেরনার (Completely Hidden Off-Screen)
+   -------------------------------------------------------------------------- */
+.youtube-player-hidden {
+  position: fixed !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  z-index: -9999 !important;
+}
+
+/* --------------------------------------------------------------------------
+   ১১. রেসপনসিভ মিডিয়া কোয়ারি (Responsive Mobile Layout)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   .top-header {
@@ -881,6 +897,13 @@ body {
 
   .title-main {
     font-size: 2.7rem;
+  }
+
+  .nagordola-container {
+    width: 200px;
+    height: 200px;
+    right: 2%;
+    bottom: 90px;
   }
 
   .player-inner {
