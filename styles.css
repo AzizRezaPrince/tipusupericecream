@@ -1,0 +1,1105 @@
+/* ==========================================================================
+   আইসক্রিমওয়ালা (Ice-Creamwala) — Styles & Animations
+   ========================================================================== */
+
+:root {
+  --font-primary: 'Hind Siliguri', -apple-system, sans-serif;
+  --font-display: 'Galada', cursive;
+  --font-accent: 'Baloo Da 2', cursive;
+
+  /* Color Palette: Twilight Nostalgia & Neon Retro */
+  --bg-dark: #0f0a1c;
+  --bg-card: rgba(26, 20, 48, 0.75);
+  --bg-card-hover: rgba(38, 30, 68, 0.85);
+
+  --accent-red: #ff3838;
+  --accent-gold: #ffb8b8;
+  --accent-yellow: #fffa65;
+  --accent-cyan: #18dcff;
+  --accent-purple: #7d5fff;
+
+  --text-main: #ffffff;
+  --text-muted: #cd84f1;
+  --text-dim: #a5b1c2;
+
+  --shadow-glow: 0 0 25px rgba(255, 56, 56, 0.4);
+  --shadow-gold: 0 0 20px rgba(255, 250, 101, 0.3);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.12);
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------------------------------
+   ১. অ্যানিমেটেড গোধূলি ব্যাকগ্রাউন্ড (Twilight Village & Road Sky)
+   -------------------------------------------------------------------------- */
+.sky-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.twilight-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #090514 0%, #1b0e34 35%, #3d1b46 65%, #6a2542 85%, #2a1120 100%);
+}
+
+/* তারা ও স্পার্কল */
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #fffa65, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #ffcccc, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 230px 50px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 300px 90px, #18dcff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 380px 150px, #ffffff, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 450px 250px;
+  opacity: 0.65;
+  animation: starsTwinkle 4s infinite alternate ease-in-out;
+}
+
+@keyframes starsTwinkle {
+  0% { opacity: 0.4; }
+  100% { opacity: 0.85; }
+}
+
+.animated-clouds {
+  position: absolute;
+  top: 5%;
+  left: -20%;
+  width: 140%;
+  height: 250px;
+  background: 
+    radial-gradient(circle at 30% 50%, rgba(255, 120, 150, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 70% 40%, rgba(180, 100, 255, 0.15) 0%, transparent 50%);
+  filter: blur(25px);
+  animation: cloudDrift 45s infinite linear;
+}
+
+@keyframes cloudDrift {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(15%); }
+}
+
+/* সুদূর গ্রামীন পাহাড় ও নারকেল গাছ */
+.village-hills {
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
+  height: 120px;
+  background: radial-gradient(ellipse at 50% 100%, #150a26 0%, #0c0517 70%);
+  border-top-left-radius: 50% 30px;
+  border-top-right-radius: 50% 30px;
+  opacity: 0.9;
+}
+
+/* রাস্তা */
+.road-surface {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 95px;
+  background: linear-gradient(180deg, #181026 0%, #0d0716 100%);
+  border-top: 3px solid #ff4b5c;
+  box-shadow: 0 -10px 25px rgba(255, 75, 92, 0.15);
+}
+
+.road-line {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 4px;
+  background: repeating-linear-gradient(90deg, #fffa65, #fffa65 30px, transparent 30px, transparent 60px);
+  opacity: 0.4;
+  animation: roadMove 2s infinite linear;
+}
+
+@keyframes roadMove {
+  0% { background-position: 0 0; }
+  100% { background-position: -60px 0; }
+}
+
+/* --------------------------------------------------------------------------
+   ২. সাইড ট্রিং-ট্রিং বেল বাটন (Horn OK Please Inspired)
+   -------------------------------------------------------------------------- */
+.bell-aside {
+  position: fixed;
+  right: 24px;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
+.bell-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #ff3838 0%, #c51162 100%);
+  border: 2px solid #fffa65;
+  padding: 14px 22px;
+  border-radius: 50px;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(255, 56, 56, 0.5), 0 0 15px rgba(255, 250, 101, 0.4);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.bell-btn:hover {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 12px 35px rgba(255, 56, 56, 0.7), 0 0 25px rgba(255, 250, 101, 0.7);
+}
+
+.bell-btn:active {
+  transform: scale(0.95);
+}
+
+.bell-icon-wrapper {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  background: #fffa65;
+  color: #c51162;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bell-svg {
+  width: 22px;
+  height: 22px;
+  animation: bellShake 3s infinite ease-in-out;
+}
+
+@keyframes bellShake {
+  0%, 80%, 100% { transform: rotate(0); }
+  85% { transform: rotate(15deg); }
+  90% { transform: rotate(-15deg); }
+  95% { transform: rotate(10deg); }
+}
+
+.bell-text-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.bell-heading {
+  font-family: var(--font-accent);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fffa65;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.bell-subtext {
+  font-size: 0.8rem;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   ৩. হেডার ও নেভিগেশন (Top Bar)
+   -------------------------------------------------------------------------- */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: rgba(15, 10, 28, 0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: var(--glass-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.clock-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: var(--glass-border);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-yellow);
+}
+
+.listeners-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(46, 213, 115, 0.12);
+  border: 1px solid rgba(46, 213, 115, 0.3);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.88rem;
+  color: #2ed573;
+  font-weight: 600;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #2ed573;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #2ed573;
+  animation: pulseDot 1.5s infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: var(--glass-border);
+  color: var(--text-main);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.header-action-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: var(--accent-yellow);
+  color: var(--accent-yellow);
+}
+
+/* --------------------------------------------------------------------------
+   ৪. ব্রান্ডিং ও প্রধান শিরোনাম
+   -------------------------------------------------------------------------- */
+.branding-section {
+  text-align: center;
+  padding: 24px 16px 12px;
+}
+
+.main-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-top {
+  font-size: 1.1rem;
+  color: var(--accent-yellow);
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.title-main {
+  font-family: var(--font-display);
+  font-size: 3.8rem;
+  background: linear-gradient(135deg, #fffa65 0%, #ff4b5c 50%, #cd84f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+  text-shadow: 0 10px 25px rgba(255, 75, 92, 0.3);
+}
+
+.title-sub {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   ৫. আইসক্রিম ভ্যান ও ফ্লেভার গ্রিড (Van Stage)
+   -------------------------------------------------------------------------- */
+.van-stage {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.van-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
+}
+
+.van-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* ভ্যানের চাকা ঘোরার অ্যানিমেশন */
+.van-wrapper.is-moving .spoke {
+  animation: spinSpokes 1s infinite linear;
+  transform-origin: center;
+}
+
+@keyframes spinSpokes {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ঠান্ডা ধোঁয়া / Steam Particle */
+.steam-container {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  pointer-events: none;
+}
+
+.mist-particle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  filter: blur(8px);
+  animation: mistRise 3s infinite ease-out;
+}
+
+.mist-particle:nth-child(2) { left: 20px; animation-delay: 0.8s; }
+.mist-particle:nth-child(3) { left: 40px; animation-delay: 1.6s; }
+.mist-particle:nth-child(4) { left: 60px; animation-delay: 2.2s; }
+
+@keyframes mistRise {
+  0% { transform: translateY(0) scale(0.6); opacity: 0; }
+  50% { opacity: 0.6; }
+  100% { transform: translateY(-60px) scale(1.5); opacity: 0; }
+}
+
+/* উড়ান্ত সুরের নোটস (Floating Notes) */
+.floating-notes-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.floating-note {
+  position: absolute;
+  font-size: 1.5rem;
+  color: var(--accent-yellow);
+  text-shadow: 0 0 10px var(--accent-yellow);
+  animation: floatNoteUp 2.5s forwards ease-out;
+}
+
+@keyframes floatNoteUp {
+  0% { transform: translateY(0) scale(0.5) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-120px) scale(1.4) rotate(45deg); opacity: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   ৬. আইসক্রিম ফ্লেভার নির্বাচন মেনু (Mood Selector)
+   -------------------------------------------------------------------------- */
+.icecream-menu-container {
+  width: 100%;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  border: var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-top: -10px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.menu-heading {
+  font-family: var(--font-accent);
+  font-size: 1.15rem;
+  color: var(--accent-gold);
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.flavor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.flavor-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  text-align: left;
+}
+
+.flavor-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--accent-yellow);
+  transform: translateY(-3px);
+}
+
+.flavor-card.active {
+  background: linear-gradient(135deg, rgba(255, 75, 92, 0.25) 0%, rgba(125, 95, 255, 0.25) 100%);
+  border: 1.5px solid var(--accent-yellow);
+  box-shadow: 0 5px 15px rgba(255, 250, 101, 0.2);
+}
+
+.flavor-icon {
+  font-size: 1.6rem;
+}
+
+.flavor-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.flavor-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.flavor-tag {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+/* --------------------------------------------------------------------------
+   ৭. বাম্পার ব্যানার (Roadside Slogans)
+   -------------------------------------------------------------------------- */
+.bumper-banner {
+  max-width: 750px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+.bumper-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(90deg, #2a1120 0%, #3d1b46 50%, #2a1120 100%);
+  border: 1px stroke var(--accent-gold);
+  border-left: 4px solid var(--accent-red);
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.bumper-quote-icon {
+  font-size: 2rem;
+  color: var(--accent-yellow);
+  line-height: 1;
+}
+
+.bumper-text {
+  flex: 1;
+  font-family: var(--font-accent);
+  font-size: 1.05rem;
+  color: var(--accent-yellow);
+  font-weight: 600;
+}
+
+.bumper-next-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.bumper-next-btn:hover {
+  background: var(--accent-red);
+  transform: rotate(180deg);
+}
+
+/* --------------------------------------------------------------------------
+   ৮. মিউজিক প্লেয়ার ডক (Player Deck Panel)
+   -------------------------------------------------------------------------- */
+.player-dock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(15, 10, 28, 0.92);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
+  z-index: 80;
+  padding: 10px 24px 14px;
+}
+
+.audio-visualizer {
+  width: 100%;
+  height: 35px;
+  display: block;
+  margin-bottom: 6px;
+  opacity: 0.8;
+}
+
+.player-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ক্যাসেট/ডিস্ক ঘুরন্ত অ্যানিমেশন */
+.disc-container {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.disc-turntable {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid #ff4b5c;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 75, 92, 0.4);
+}
+
+.disc-turntable.is-playing {
+  animation: spinDisc 8s infinite linear;
+}
+
+@keyframes spinDisc {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.album-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.disc-center-hub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+  border: 3px solid #2d3436;
+  border-radius: 50%;
+}
+
+/* ট্র‍্যাক তথ্য ও সিকবার */
+.track-meta-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.track-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #ffffff;
+}
+
+.track-artist {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.seek-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.time-display {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  min-width: 35px;
+  font-variant-numeric: tabular-nums;
+}
+
+.seek-bar-wrapper {
+  position: relative;
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.seek-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-red), var(--accent-yellow));
+  border-radius: 4px;
+}
+
+.seek-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* প্লেয়ার কন্ট্রোল বোতাম ও ভলিউম স্লাইডার */
+.controls-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.volume-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: var(--glass-border);
+  padding: 4px 12px 4px 4px;
+  border-radius: 30px;
+}
+
+.volume-slider {
+  width: 75px;
+  height: 4px;
+  accent-color: var(--accent-yellow);
+  cursor: pointer;
+}
+
+.ctrl-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: var(--glass-border);
+  color: var(--text-main);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.ctrl-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--accent-yellow);
+  transform: scale(1.05);
+}
+
+.ctrl-btn.active {
+  color: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+}
+
+.main-play-btn {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--accent-red) 0%, #c51162 100%);
+  border: none;
+  box-shadow: 0 0 20px rgba(255, 56, 56, 0.5);
+}
+
+.main-play-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 56, 56, 0.8);
+  color: #ffffff;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   ৯. স্লাইডিং প্লেলিস্ট প্যানেল (Playlist Drawer)
+   -------------------------------------------------------------------------- */
+.playlist-panel {
+  position: fixed;
+  bottom: 95px;
+  right: 24px;
+  width: 420px;
+  max-width: calc(100vw - 48px);
+  max-height: 480px;
+  background: rgba(18, 12, 31, 0.95);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  z-index: 75;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(120%);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.playlist-panel.is-open {
+  transform: translateY(0);
+}
+
+.playlist-header {
+  padding: 16px 20px;
+  border-bottom: var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.playlist-title-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.playlist-title-group h3 {
+  font-family: var(--font-accent);
+  font-size: 1.15rem;
+  color: var(--accent-gold);
+}
+
+.track-count-badge {
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+  color: var(--text-dim);
+}
+
+.close-playlist-btn {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+}
+
+.search-box input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 36px 8px 14px;
+  border-radius: 20px;
+  color: #ffffff;
+  font-family: var(--font-primary);
+  font-size: 0.88rem;
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: var(--accent-yellow);
+}
+
+.search-box svg {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-dim);
+}
+
+.playlist-scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+.playlist-items-list {
+  list-style: none;
+}
+
+.playlist-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.playlist-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.playlist-item.active {
+  background: rgba(255, 75, 92, 0.18);
+  border-left: 4px solid var(--accent-red);
+}
+
+.item-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.item-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.item-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-artist {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+/* --------------------------------------------------------------------------
+   ১০. কাস্টম মোডাল (Add Song Modal Dialog)
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 480px;
+  background: #181028;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  font-family: var(--font-accent);
+  font-size: 1.3rem;
+  color: var(--accent-gold);
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form-group input, .form-group select {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.form-group input:focus, .form-group select:focus {
+  border-color: var(--accent-yellow);
+}
+
+.form-hint {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-red), #c51162);
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--text-main);
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* লুকানো ইউটিউব আইফ্রেম */
+.youtube-player-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   ১১. রেসপনসিভ মিডিয়া কোয়ারি (Responsive Mobile & Tablet Layout)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .top-header {
+    padding: 12px 16px;
+  }
+  
+  .listeners-badge {
+    display: none;
+  }
+
+  .bell-aside {
+    top: auto;
+    bottom: 115px;
+    right: 16px;
+    transform: none;
+  }
+
+  .bell-btn {
+    padding: 10px 16px;
+  }
+
+  .bell-subtext {
+    display: none;
+  }
+
+  .title-main {
+    font-size: 2.6rem;
+  }
+
+  .player-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .disc-container {
+    display: none;
+  }
+
+  .track-meta-section {
+    width: 100%;
+  }
+
+  .playlist-panel {
+    right: 12px;
+    left: 12px;
+    width: auto;
+    bottom: 110px;
+  }
+}

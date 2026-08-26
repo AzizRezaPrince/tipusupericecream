@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>টিপু সুলতানের সুপার স্পেশাল আইসক্রিম — নস্টালজিক বাংলা সুর</title>
+  <meta name="description" content="টিপু সুলতানের নস্টালজিক আইসক্রিম ভ্যানের বাংলা মিউজিক প্লেয়ার।">
+  <meta name="theme-color" content="#120c1f">
+
+  <!-- Google Fonts: Bangla & Retro Styling -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;600;700;800&family=Galada&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- অ্যানিমেটেড পটভূমি (গোধূলি গ্রাম ও রাস্তা) -->
+  <div class="sky-background" aria-hidden="true">
+    <div class="stars"></div>
+    <div class="twilight-gradient"></div>
+    <div class="animated-clouds"></div>
+    <div class="distant-palms"></div>
+    <div class="village-hills"></div>
+    <div class="road-surface">
+      <div class="road-line"></div>
+    </div>
+    <div class="fireflies-container" id="firefliesContainer"></div>
+  </div>
+
+  <!-- সাইড ট্রিং-ট্রিং বেল বাটন (Horn OK Please স্টাইল) -->
+  <aside class="bell-aside">
+    <button class="bell-btn" id="bellBtn" type="button" aria-label="ট্রিং ট্রিং বেল বাজান">
+      <div class="bell-icon-wrapper">
+        <svg viewBox="0 0 24 24" class="bell-svg">
+          <path fill="currentColor" d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+        </svg>
+        <span class="bell-ripple"></span>
+      </div>
+      <div class="bell-text-group">
+        <span class="bell-heading">ট্রিং ট্রিং! 🔔</span>
+        <span class="bell-subtext">বেল বাজান ও গান শুনুন</span>
+      </div>
+    </button>
+  </aside>
+
+  <!-- প্রধান নেভিগেশন ও হেডার -->
+  <header class="top-header">
+    <div class="header-left">
+      <div class="clock-badge">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+        </svg>
+        <span id="bgClock">১২:০০ PM</span>
+      </div>
+      <div class="listeners-badge">
+        <span class="live-dot"></span>
+        <span id="listenersCount">১৪২</span> জন দোকানে ভিড় জমিয়েছে
+      </div>
+    </div>
+
+    <div class="header-right">
+      <button class="header-action-btn" id="ambientToggleBtn" type="button" title="গ্রামীন আবহ আওয়াজ">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" id="ambientIcon">
+          <path d="M4.27 3L3 4.27l4.28 4.28c-.63.52-1.11 1.24-1.28 2.06H4v2h2c.32 1.56 1.44 2.83 2.91 3.34l3.19 3.19c-.35.08-.72.13-1.1.13-2.76 0-5-2.24-5-5H4c0 3.87 3.13 7 7 7 1.05 0 2.05-.23 2.94-.65l3.79 3.79L19 20.73 4.27 3zM12 4c.64 0 1.25.1 1.83.27l1.55 1.55c-.94-.52-2.02-.82-3.38-.82-3.87 0-7 3.13-7 7h2c0-2.76 2.24-5 5-5z"/>
+        </svg>
+        <span>আবহ আওয়াজ</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- মূল কন্টেইনার -->
+  <main class="main-container">
+    <!-- বড় নস্টালজিক লোগো -->
+    <div class="branding-section">
+      <h1 class="main-title">
+        <span class="title-top">নস্টালজিক সুরের</span>
+        <span class="title-main">আইসক্রিমওয়ালা</span>
+        <span class="title-sub">টিপু সুলতানের সুপার স্পেশাল আইসক্রিম ও বাংলা নস্টালজিক প্লেলিস্ট</span>
+      </h1>
+    </div>
+
+    <!-- ভিজ্যুয়াল আইসক্রিম ভ্যান ও ফ্লেভার বক্স এলাকা -->
+    <section class="van-stage">
+      <div class="floating-notes-layer" id="notesLayer"></div>
+
+      <!-- আইসক্রিম ভ্যান SVG চিত্র -->
+      <div class="van-wrapper" id="vanWrapper">
+        <div class="steam-container">
+          <span class="mist-particle"></span>
+          <span class="mist-particle"></span>
+          <span class="mist-particle"></span>
+          <span class="mist-particle"></span>
+        </div>
+
+        <svg class="van-svg" viewBox="0 0 600 350" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="vanBodyGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff4b5c"/>
+              <stop offset="50%" stop-color="#d63031"/>
+              <stop offset="100%" stop-color="#8c1214"/>
+            </linearGradient>
+            <linearGradient id="boxGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#fffae6"/>
+              <stop offset="100%" stop-color="#ffeaa7"/>
+            </linearGradient>
+            <linearGradient id="metalGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#bdc3c7"/>
+              <stop offset="50%" stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#7f8c8d"/>
+            </linearGradient>
+            <radialGradient id="lampGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ffeaa7" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#fdcb6e" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- ভ্যানের ছায়া -->
+          <ellipse cx="300" cy="315" rx="240" ry="18" fill="rgba(0,0,0,0.4)" />
+
+          <!-- ভ্যান ফ্রেম ও ক্যাব -->
+          <g class="van-structure">
+            <!-- পিছনের চাকা -->
+            <g class="wheel wheel-back">
+              <circle cx="160" cy="285" r="40" fill="#2d3436" stroke="#636e72" stroke-width="4"/>
+              <circle cx="160" cy="285" r="28" fill="#1e272e"/>
+              <line x1="160" y1="245" x2="160" y2="325" stroke="#ffeaa7" stroke-width="3" class="spoke"/>
+              <line x1="120" y1="285" x2="200" y2="285" stroke="#ffeaa7" stroke-width="3" class="spoke"/>
+              <line x1="132" y1="257" x2="188" y2="313" stroke="#ffeaa7" stroke-width="2" class="spoke"/>
+              <line x1="132" y1="313" x2="188" y2="257" stroke="#ffeaa7" stroke-width="2" class="spoke"/>
+              <circle cx="160" cy="285" r="8" fill="#fdcb6e"/>
+            </g>
+
+            <!-- সামনের চাকা -->
+            <g class="wheel wheel-front">
+              <circle cx="450" cy="285" r="40" fill="#2d3436" stroke="#636e72" stroke-width="4"/>
+              <circle cx="450" cy="285" r="28" fill="#1e272e"/>
+              <line x1="450" y1="245" x2="450" y2="325" stroke="#ffeaa7" stroke-width="3" class="spoke"/>
+              <line x1="410" y1="285" x2="490" y2="285" stroke="#ffeaa7" stroke-width="3" class="spoke"/>
+              <line x1="422" y1="257" x2="478" y2="313" stroke="#ffeaa7" stroke-width="2" class="spoke"/>
+              <line x1="422" y1="313" x2="478" y2="257" stroke="#ffeaa7" stroke-width="2" class="spoke"/>
+              <circle cx="450" cy="285" r="8" fill="#fdcb6e"/>
+            </g>
+
+            <!-- আইসক্রিম বড় ডিপ ফ্রিজার বক্স -->
+            <rect x="100" y="140" width="270" height="135" rx="12" fill="url(#boxGrad)" stroke="#e17055" stroke-width="5"/>
+            <rect x="110" y="150" width="250" height="115" rx="8" fill="#fff" opacity="0.6"/>
+            
+            <!-- বক্সের ওপর রঙিন ব্যানার প্যানেল -->
+            <rect x="100" y="175" width="270" height="45" fill="#e17055"/>
+            <text x="235" y="203" font-family="'Galada', cursive" font-size="15" fill="#ffffff" text-anchor="middle">টিপু সুলতানের সুপার স্পেশাল আইসক্রিম</text>
+
+            <!-- আইসক্রিম বক্সের ঢাকনা (অ্যানিমেটেড ওপেনিং) -->
+            <g class="box-lid" id="boxLid">
+              <rect x="92" y="125" width="286" height="20" rx="6" fill="url(#vanBodyGrad)" stroke="#b2bec3" stroke-width="2"/>
+              <rect x="210" y="112" width="50" height="15" rx="4" fill="url(#metalGrad)"/>
+            </g>
+
+            <!-- সাইকেল রিকশা ভ্যান চালকের সিট ও হ্যান্ডেল -->
+            <path d="M 370 200 L 430 170 L 450 240" fill="none" stroke="#2d3436" stroke-width="8" stroke-linecap="round"/>
+            <rect x="360" y="190" width="35" height="12" rx="4" fill="#636e72"/>
+            
+            <!-- ভ্যানের হ্যান্ডেলবার ও বেল -->
+            <path d="M 425 155 L 435 185 L 475 185" fill="none" stroke="#636e72" stroke-width="6"/>
+            <circle cx="435" cy="155" r="10" fill="#fdcb6e" stroke="#d63031" stroke-width="2"/>
+
+            <!-- সামনের রেট্রো হারিকেন/ল্যাম্প আলো -->
+            <circle cx="485" cy="210" r="35" fill="url(#lampGlow)"/>
+            <path d="M 470 195 L 495 210 L 470 225 Z" fill="#ffeaa7"/>
+
+            <!-- ছাদ / সামিয়ানা (রঙিন স্ট্রাইপ ক্যানোপি) -->
+            <path d="M 80 120 L 390 120 L 380 70 L 90 70 Z" fill="#e84393"/>
+            <g class="canopy-stripes">
+              <path d="M 90 70 L 120 70 L 110 120 L 80 120 Z" fill="#fdcb6e"/>
+              <path d="M 150 70 L 180 70 L 170 120 L 140 120 Z" fill="#fdcb6e"/>
+              <path d="M 210 70 L 240 70 L 230 120 L 200 120 Z" fill="#fdcb6e"/>
+              <path d="M 270 70 L 300 70 L 290 120 L 260 120 Z" fill="#fdcb6e"/>
+              <path d="M 330 70 L 360 70 L 350 120 L 320 120 Z" fill="#fdcb6e"/>
+            </g>
+
+            <!-- আইসক্রিমওয়ালা মামার ইলাস্ট্রেশন (Nostalgic Vendor) -->
+            <g class="vendor-character">
+              <circle cx="400" cy="130" r="18" fill="#ffeaa7"/> <!-- মুখ -->
+              <path d="M 382 125 Q 400 115 418 125 Q 400 135 382 125 Z" fill="#2d3436"/> <!-- টুপি/মুচ্ছ -->
+              <path d="M 385 116 Q 400 100 415 116 Z" fill="#ffffff"/> <!-- টুপি -->
+              <rect x="388" y="148" width="24" height="35" fill="#0984e3" rx="4"/> <!-- শার্ট -->
+            </g>
+          </g>
+        </svg>
+      </div>
+
+
+    </section>
+
+    <!-- নস্টালজিক স্লোগান বাম্পার ব্যানার -->
+    <section class="bumper-banner">
+      <div class="bumper-content">
+        <span class="bumper-quote-icon">“</span>
+        <p class="bumper-text" id="bumperQuote">টিপু সুলতানের সুপার স্পেশাল আইসক্রিম — ঠান্ডা খান, বাংলা গান শোনেন!</p>
+        <button class="bumper-next-btn" id="nextQuoteBtn" type="button" title="পরবর্তী নস্টালজিক উক্তি">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- মিউজিক প্লেয়ার ডক (Player Deck) -->
+    <section class="player-dock">
+      <!-- ক্যানভাস অডিও ভিজ্যুয়ালাইজার (ডিজিটাল ফ্রিকোয়েন্সি বার) -->
+      <canvas class="audio-visualizer" id="visualizerCanvas" height="45"></canvas>
+
+      <div class="player-inner">
+        <!-- ঘুরন্ত ক্যাসেট / ডিস্ক আর্ট -->
+        <div class="disc-container" id="discContainer">
+          <div class="disc-turntable" id="discDeck">
+            <img class="album-cover" id="albumArt" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=300&auto=format&fit=crop&q=80" alt="কভার আর্ট">
+            <div class="disc-center-hub"></div>
+          </div>
+        </div>
+
+        <!-- মেটাডেটা ও সিকবার -->
+        <div class="track-meta-section">
+          <h2 class="track-title" id="trackTitle">গান শুরু করতে প্লে (▶) বাটনে ক্লিক করুন</h2>
+          <p class="track-artist" id="trackArtist">টিপু সুলতানের প্লেলিস্ট</p>
+
+          <div class="seek-container">
+            <span class="time-display" id="currentTime">০:০০</span>
+            <div class="seek-bar-wrapper" id="seekBarWrapper">
+              <div class="seek-progress" id="seekProgress"></div>
+              <input type="range" class="seek-input" id="seekInput" min="0" max="100" value="0" step="0.1" aria-label="গান আগে-পিছে করুন">
+            </div>
+            <span class="time-display" id="durationTime">০:০০</span>
+          </div>
+        </div>
+
+        <!-- প্লেয়ার কন্ট্রোলস -->
+        <div class="controls-section">
+          <!-- পূর্ববর্তী -->
+          <button class="ctrl-btn" id="prevBtn" type="button" title="পূর্ববর্তী গান">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+            </svg>
+          </button>
+
+          <!-- প্লে/পজ প্রধান বোতাম -->
+          <button class="ctrl-btn main-play-btn" id="playPauseBtn" type="button" title="প্লে / পজ">
+            <svg class="play-icon" viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </svg>
+          </button>
+
+          <!-- পরবর্তী -->
+          <button class="ctrl-btn" id="nextBtn" type="button" title="পরবর্তী গান">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+            </svg>
+          </button>
+
+          <!-- সাউন্ড ভলিউম স্লাইডার (Volume Control Slider) -->
+          <div class="volume-container" title="সাউন্ড কমবেশি করুন">
+            <button class="ctrl-btn volume-btn" id="muteToggleBtn" type="button">
+              <svg class="vol-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+              </svg>
+            </button>
+            <input type="range" class="volume-slider" id="volumeInput" min="0" max="100" value="100" step="1" aria-label="সাউন্ড ভলিউম">
+          </div>
+
+          <!-- প্লেলিস্ট ড্রয়ার বোতাম -->
+          <button class="ctrl-btn playlist-toggle-btn" id="playlistToggleBtn" type="button" title="প্লেলিস্ট খুলুন">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M4 10h12v2H4zm0-4h12v2H4zm0 8h8v2H4zm10 0v6l5-3z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- স্লাইডিং প্লেলিস্ট ড্রয়ার (Playlist Drawer Panel) -->
+    <section class="playlist-panel" id="playlistPanel">
+      <div class="playlist-header">
+        <div class="playlist-title-group">
+          <h3>🎵 টিপু সুলতানের প্লেলিস্ট গান</h3>
+          <span class="track-count-badge" id="trackCountBadge">০টি গান</span>
+        </div>
+        
+        <!-- সার্চ বার -->
+        <div class="search-box">
+          <input type="text" id="playlistSearch" placeholder="গান খুঁজুন…" aria-label="গান খুঁজুন">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </div>
+
+        <button class="close-playlist-btn" id="closePlaylistBtn" type="button" aria-label="বন্ধ করুন">&times;</button>
+      </div>
+
+      <!-- প্লেলিস্ট গানের তালিকা -->
+      <div class="playlist-scroll-container">
+        <ul class="playlist-items-list" id="playlistItemsList">
+          <!-- JS দিয়ে গান পূর্ণ হবে -->
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ব্যাকগ্রাউন্ডে লুকানো ইউটিউব আইফ্রেম হোল্ডার -->
+  <div class="youtube-player-hidden">
+    <div id="youtubePlayerHost"></div>
+  </div>
+
+  <!-- YouTube IFrame API Script -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="app.js"></script>
+</body>
+</html>
