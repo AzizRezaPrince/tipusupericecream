@@ -159,7 +159,6 @@ const elements = {
   playlistSearch: document.getElementById('playlistSearch'),
   trackCountBadge: document.getElementById('trackCountBadge'),
   
-  ambientToggleBtn: document.getElementById('ambientToggleBtn'),
   visualizerCanvas: document.getElementById('visualizerCanvas')
 };
 
@@ -208,23 +207,23 @@ function playBellChime(startTime) {
 }
 
 // --------------------------------------------------------------------------
-// ৭. উড়ান্ত সুরের নোটিফিকেশন অ্যানিমেশন (Floating Musical Notes)
+// ৭. উড়ান্ত সুরের নোটিফিকেশন অ্যানিমেশন (Floating Musical Notes & Ice Creams)
 // --------------------------------------------------------------------------
 function spawnFloatingNotes() {
-  const symbols = ['♫', '♪', '♬', '♩', '🍦', '❄️', '⭐'];
-  for (let i = 0; i < 5; i++) {
+  const symbols = ['♫', '♪', '♬', '♩', '🍦', '🧊', '🍫', '🍧', '🍨', '🥭', '⭐', '✨'];
+  for (let i = 0; i < 6; i++) {
     setTimeout(() => {
       const note = document.createElement('div');
       note.className = 'floating-note';
       note.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-      note.style.left = (35 + Math.random() * 30) + '%';
+      note.style.left = (25 + Math.random() * 50) + '%';
       note.style.bottom = '180px';
       elements.notesLayer.appendChild(note);
 
       setTimeout(() => {
         note.remove();
       }, 2500);
-    }, i * 150);
+    }, i * 140);
   }
 }
 
@@ -337,12 +336,10 @@ function togglePlayPause() {
   if (!ytPlayer) return;
 
   if (isPlaying) {
-    // গান পজ (Pause)
     ytPlayer.pauseVideo();
     isPlaying = false;
     updatePlayPauseUI();
   } else {
-    // গান প্লে (Play)
     if (ytPlayer.unMute) {
       ytPlayer.unMute();
       ytPlayer.setVolume(currentVolume);
@@ -381,11 +378,7 @@ function handleVolumeChange(e) {
   if (ytPlayer && ytPlayer.setVolume) {
     ytPlayer.setVolume(currentVolume);
   }
-  if (currentVolume === 0) {
-    isMuted = true;
-  } else {
-    isMuted = false;
-  }
+  isMuted = (currentVolume === 0);
 }
 
 function toggleMute() {
@@ -540,7 +533,7 @@ function updateClock() {
 }
 
 function updateListenersCount() {
-  const base = 148 + Math.floor(Math.random() * 30);
+  const base = 155 + Math.floor(Math.random() * 25);
   elements.listenersCount.textContent = toBnDigits(base);
 }
 
