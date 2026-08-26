@@ -1,56 +1,80 @@
 <!DOCTYPE html>
 <html lang="bn">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>টিপু সুলতানের সুপার স্পেশাল আইসক্রিম — নস্টালজিক বাংলা সুর</title>
-  <meta name="description" content="টিপু সুলতানের নস্টালজিক গ্রামের মেলা আইসক্রিম ভ্যানের বাংলা মিউজিক প্লেয়ার।">
+  <title>টিপু সুলতানের সুপার স্পেশাল আইসক্রিম</title>
+  <meta name="description" content="টিপু সুলতানের আইসক্রিম ভ্যানের মিউজিক">
   <meta name="theme-color" content="#e6004c">
 
   <!-- Google Fonts: Bangla & Retro Styling -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;600;700;800&family=Galada&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;600;700;800&family=Galada&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <!-- অ্যানিমেটেড পটভূমি (গ্রামের মেলা, রঙিন লাল-গোলাপী গোধূলি, নাগরদোলা ও তারা) -->
   <div class="sky-background" aria-hidden="true">
     <div class="stars"></div>
     <div class="twilight-gradient"></div>
     <div class="animated-clouds"></div>
-    
+
     <!-- গ্রামের মেলার সুস্পষ্ট ও বড় নাগরদোলা (Big & Clear Nagordola Ferris Wheel) -->
     <div class="nagordola-container">
       <svg class="nagordola-svg" viewBox="0 0 300 300">
         <!-- সেন্ট্রাল ট্রাস স্ট্যান্ড (Support A-Frame) -->
-        <path d="M 90 280 L 150 140 L 210 280" stroke="#ffd700" stroke-width="6" fill="none" stroke-linecap="round"/>
-        <line x1="110" y1="230" x2="190" y2="230" stroke="#ffd700" stroke-width="4"/>
+        <path d="M 90 280 L 150 140 L 210 280" stroke="#ffd700" stroke-width="6" fill="none" stroke-linecap="round" />
+        <line x1="110" y1="230" x2="190" y2="230" stroke="#ffd700" stroke-width="4" />
 
         <!-- ঘুরন্ত নাগরদোলা চাকা (Rotating Ring & Spokes) -->
         <g class="fair-wheel-ring">
           <!-- বাইরের চাকা ও ভিতরের চাকা -->
-          <circle cx="150" cy="140" r="115" fill="none" stroke="#ffeb3b" stroke-width="5"/>
-          <circle cx="150" cy="140" r="115" fill="none" stroke="#ff007f" stroke-width="2" stroke-dasharray="12 10"/>
-          <circle cx="150" cy="140" r="75" fill="none" stroke="#ffeb3b" stroke-width="3"/>
-          <circle cx="150" cy="140" r="16" fill="#ffd700" stroke="#ffffff" stroke-width="2"/>
+          <circle cx="150" cy="140" r="115" fill="none" stroke="#ffeb3b" stroke-width="5" />
+          <circle cx="150" cy="140" r="115" fill="none" stroke="#ff007f" stroke-width="2" stroke-dasharray="12 10" />
+          <circle cx="150" cy="140" r="75" fill="none" stroke="#ffeb3b" stroke-width="3" />
+          <circle cx="150" cy="140" r="16" fill="#ffd700" stroke="#ffffff" stroke-width="2" />
 
           <!-- স্পোকস (Spokes) -->
-          <line x1="150" y1="25" x2="150" y2="255" stroke="#ffeb3b" stroke-width="3"/>
-          <line x1="35" y1="140" x2="265" y2="140" stroke="#ffeb3b" stroke-width="3"/>
-          <line x1="68" y1="58" x2="232" y2="222" stroke="#ffeb3b" stroke-width="3"/>
-          <line x1="68" y1="222" x2="232" y2="58" stroke="#ffeb3b" stroke-width="3"/>
+          <line x1="150" y1="25" x2="150" y2="255" stroke="#ffeb3b" stroke-width="3" />
+          <line x1="35" y1="140" x2="265" y2="140" stroke="#ffeb3b" stroke-width="3" />
+          <line x1="68" y1="58" x2="232" y2="222" stroke="#ffeb3b" stroke-width="3" />
+          <line x1="68" y1="222" x2="232" y2="58" stroke="#ffeb3b" stroke-width="3" />
 
           <!-- ৮টি দোলা/বক্স (8 Colorful Nagordola Swing Seats) -->
-          <g transform="translate(150, 25)"><rect x="-14" y="0" width="28" height="22" rx="5" fill="#ff0055" stroke="#ffeb3b" stroke-width="2"/><circle cx="0" cy="11" r="3" fill="#ffeb3b"/></g>
-          <g transform="translate(150, 255)"><rect x="-14" y="-22" width="28" height="22" rx="5" fill="#ff0055" stroke="#ffeb3b" stroke-width="2"/><circle cx="0" cy="-11" r="3" fill="#ffeb3b"/></g>
-          <g transform="translate(35, 140)"><rect x="0" y="-11" width="22" height="28" rx="5" fill="#ffeb3b" stroke="#ff0055" stroke-width="2"/><circle cx="11" cy="0" r="3" fill="#ff0055"/></g>
-          <g transform="translate(265, 140)"><rect x="-22" y="-11" width="22" height="28" rx="5" fill="#ffeb3b" stroke="#ff0055" stroke-width="2"/><circle cx="-11" cy="0" r="3" fill="#ff0055"/></g>
-          <g transform="translate(68, 58)"><rect x="-12" y="-12" width="24" height="24" rx="5" fill="#00e5ff" stroke="#ffeb3b" stroke-width="2"/></g>
-          <g transform="translate(232, 222)"><rect x="-12" y="-12" width="24" height="24" rx="5" fill="#00e5ff" stroke="#ffeb3b" stroke-width="2"/></g>
-          <g transform="translate(68, 222)"><rect x="-12" y="-12" width="24" height="24" rx="5" fill="#ff007f" stroke="#ffeb3b" stroke-width="2"/></g>
-          <g transform="translate(232, 58)"><rect x="-12" y="-12" width="24" height="24" rx="5" fill="#ff007f" stroke="#ffeb3b" stroke-width="2"/></g>
+          <g transform="translate(150, 25)">
+            <rect x="-14" y="0" width="28" height="22" rx="5" fill="#ff0055" stroke="#ffeb3b" stroke-width="2" />
+            <circle cx="0" cy="11" r="3" fill="#ffeb3b" />
+          </g>
+          <g transform="translate(150, 255)">
+            <rect x="-14" y="-22" width="28" height="22" rx="5" fill="#ff0055" stroke="#ffeb3b" stroke-width="2" />
+            <circle cx="0" cy="-11" r="3" fill="#ffeb3b" />
+          </g>
+          <g transform="translate(35, 140)">
+            <rect x="0" y="-11" width="22" height="28" rx="5" fill="#ffeb3b" stroke="#ff0055" stroke-width="2" />
+            <circle cx="11" cy="0" r="3" fill="#ff0055" />
+          </g>
+          <g transform="translate(265, 140)">
+            <rect x="-22" y="-11" width="22" height="28" rx="5" fill="#ffeb3b" stroke="#ff0055" stroke-width="2" />
+            <circle cx="-11" cy="0" r="3" fill="#ff0055" />
+          </g>
+          <g transform="translate(68, 58)">
+            <rect x="-12" y="-12" width="24" height="24" rx="5" fill="#00e5ff" stroke="#ffeb3b" stroke-width="2" />
+          </g>
+          <g transform="translate(232, 222)">
+            <rect x="-12" y="-12" width="24" height="24" rx="5" fill="#00e5ff" stroke="#ffeb3b" stroke-width="2" />
+          </g>
+          <g transform="translate(68, 222)">
+            <rect x="-12" y="-12" width="24" height="24" rx="5" fill="#ff007f" stroke="#ffeb3b" stroke-width="2" />
+          </g>
+          <g transform="translate(232, 58)">
+            <rect x="-12" y="-12" width="24" height="24" rx="5" fill="#ff007f" stroke="#ffeb3b" stroke-width="2" />
+          </g>
         </g>
       </svg>
     </div>
@@ -66,34 +90,36 @@
   <div class="fair-bunting-banner" aria-hidden="true">
     <svg viewBox="0 0 1200 60" preserveAspectRatio="none" class="bunting-svg">
       <!-- ঝালর সুতা -->
-      <path d="M 0 10 Q 300 40 600 10 Q 900 40 1200 10" fill="none" stroke="#ffd700" stroke-width="2"/>
+      <path d="M 0 10 Q 300 40 600 10 Q 900 40 1200 10" fill="none" stroke="#ffd700" stroke-width="2" />
       <!-- রঙিন ত্রিভুজ পতাকা -->
-      <polygon points="20,12 50,45 80,15" fill="#ff0055"/>
-      <polygon points="90,16 120,48 150,18" fill="#ffeb3b"/>
-      <polygon points="160,19 190,52 220,20" fill="#00e5ff"/>
-      <polygon points="230,21 260,54 290,22" fill="#ff007f"/>
-      <polygon points="300,23 330,55 360,23" fill="#7d5fff"/>
-      <polygon points="370,22 400,54 430,21" fill="#ff0055"/>
-      <polygon points="440,20 470,52 500,19" fill="#ffeb3b"/>
-      <polygon points="510,18 540,48 570,16" fill="#00e5ff"/>
-      <polygon points="580,15 610,45 640,15" fill="#ff007f"/>
-      <polygon points="650,16 680,48 710,18" fill="#ffeb3b"/>
-      <polygon points="720,19 750,52 780,20" fill="#ff0055"/>
-      <polygon points="790,21 820,54 850,22" fill="#00e5ff"/>
-      <polygon points="860,23 890,55 920,23" fill="#ff007f"/>
-      <polygon points="930,22 960,54 990,21" fill="#ffeb3b"/>
-      <polygon points="1000,20 1030,52 1060,19" fill="#ff0055"/>
-      <polygon points="1070,18 1100,48 1130,16" fill="#00e5ff"/>
-      <polygon points="1140,15 1170,45 1200,15" fill="#ff007f"/>
+      <polygon points="20,12 50,45 80,15" fill="#ff0055" />
+      <polygon points="90,16 120,48 150,18" fill="#ffeb3b" />
+      <polygon points="160,19 190,52 220,20" fill="#00e5ff" />
+      <polygon points="230,21 260,54 290,22" fill="#ff007f" />
+      <polygon points="300,23 330,55 360,23" fill="#7d5fff" />
+      <polygon points="370,22 400,54 430,21" fill="#ff0055" />
+      <polygon points="440,20 470,52 500,19" fill="#ffeb3b" />
+      <polygon points="510,18 540,48 570,16" fill="#00e5ff" />
+      <polygon points="580,15 610,45 640,15" fill="#ff007f" />
+      <polygon points="650,16 680,48 710,18" fill="#ffeb3b" />
+      <polygon points="720,19 750,52 780,20" fill="#ff0055" />
+      <polygon points="790,21 820,54 850,22" fill="#00e5ff" />
+      <polygon points="860,23 890,55 920,23" fill="#ff007f" />
+      <polygon points="930,22 960,54 990,21" fill="#ffeb3b" />
+      <polygon points="1000,20 1030,52 1060,19" fill="#ff0055" />
+      <polygon points="1070,18 1100,48 1130,16" fill="#00e5ff" />
+      <polygon points="1140,15 1170,45 1200,15" fill="#ff007f" />
     </svg>
   </div>
 
   <!-- সাইড ভাসমান অ্যানিমেটেড বাইসাইকেল বেল বাটন (Single Moving Bell Icon) -->
   <aside class="bell-aside">
-    <button class="bell-btn" id="bellBtn" type="button" title="বাইসাইকেল বেল বাজাও (ট্রিং ট্রিং!)" aria-label="বাইসাইকেল বেল বাজান">
+    <button class="bell-btn" id="bellBtn" type="button" title="বাইসাইকেল বেল বাজাও (ট্রিং ট্রিং!)"
+      aria-label="বাইসাইকেল বেল বাজান">
       <div class="bell-icon-wrapper">
         <svg viewBox="0 0 24 24" class="bell-svg">
-          <path fill="currentColor" d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+          <path fill="currentColor"
+            d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
         </svg>
         <span class="bell-ripple"></span>
       </div>
@@ -105,7 +131,8 @@
     <div class="header-left">
       <div class="clock-badge">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-          <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+          <path
+            d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
         </svg>
         <span id="bgClock">১২:০০ PM</span>
       </div>
@@ -144,22 +171,22 @@
         <svg class="van-svg" viewBox="0 0 600 350" preserveAspectRatio="xMidYMid meet">
           <defs>
             <linearGradient id="vanBodyGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#ff0055"/>
-              <stop offset="50%" stop-color="#ff007f"/>
-              <stop offset="100%" stop-color="#990033"/>
+              <stop offset="0%" stop-color="#ff0055" />
+              <stop offset="50%" stop-color="#ff007f" />
+              <stop offset="100%" stop-color="#990033" />
             </linearGradient>
             <linearGradient id="boxGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#fff9db"/>
-              <stop offset="100%" stop-color="#ffeb3b"/>
+              <stop offset="0%" stop-color="#fff9db" />
+              <stop offset="100%" stop-color="#ffeb3b" />
             </linearGradient>
             <linearGradient id="metalGrad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#bdc3c7"/>
-              <stop offset="50%" stop-color="#ffffff"/>
-              <stop offset="100%" stop-color="#7f8c8d"/>
+              <stop offset="0%" stop-color="#bdc3c7" />
+              <stop offset="50%" stop-color="#ffffff" />
+              <stop offset="100%" stop-color="#7f8c8d" />
             </linearGradient>
             <radialGradient id="lampGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#ffeb3b" stop-opacity="1"/>
-              <stop offset="100%" stop-color="#ff9800" stop-opacity="0"/>
+              <stop offset="0%" stop-color="#ffeb3b" stop-opacity="1" />
+              <stop offset="100%" stop-color="#ff9800" stop-opacity="0" />
             </radialGradient>
           </defs>
 
@@ -170,71 +197,76 @@
           <g class="van-structure">
             <!-- পিছনের চাকা -->
             <g class="wheel wheel-back">
-              <circle cx="160" cy="285" r="40" fill="#2d3436" stroke="#ffeb3b" stroke-width="4"/>
-              <circle cx="160" cy="285" r="28" fill="#1e272e"/>
-              <line x1="160" y1="245" x2="160" y2="325" stroke="#ffeb3b" stroke-width="3" class="spoke"/>
-              <line x1="120" y1="285" x2="200" y2="285" stroke="#ffeb3b" stroke-width="3" class="spoke"/>
-              <line x1="132" y1="257" x2="188" y2="313" stroke="#ffeb3b" stroke-width="2" class="spoke"/>
-              <line x1="132" y1="313" x2="188" y2="257" stroke="#ffeb3b" stroke-width="2" class="spoke"/>
-              <circle cx="160" cy="285" r="8" fill="#ffeb3b"/>
+              <circle cx="160" cy="285" r="40" fill="#2d3436" stroke="#ffeb3b" stroke-width="4" />
+              <circle cx="160" cy="285" r="28" fill="#1e272e" />
+              <line x1="160" y1="245" x2="160" y2="325" stroke="#ffeb3b" stroke-width="3" class="spoke" />
+              <line x1="120" y1="285" x2="200" y2="285" stroke="#ffeb3b" stroke-width="3" class="spoke" />
+              <line x1="132" y1="257" x2="188" y2="313" stroke="#ffeb3b" stroke-width="2" class="spoke" />
+              <line x1="132" y1="313" x2="188" y2="257" stroke="#ffeb3b" stroke-width="2" class="spoke" />
+              <circle cx="160" cy="285" r="8" fill="#ffeb3b" />
             </g>
 
             <!-- সামনের চাকা -->
             <g class="wheel wheel-front">
-              <circle cx="450" cy="285" r="40" fill="#2d3436" stroke="#ffeb3b" stroke-width="4"/>
-              <circle cx="450" cy="285" r="28" fill="#1e272e"/>
-              <line x1="450" y1="245" x2="450" y2="325" stroke="#ffeb3b" stroke-width="3" class="spoke"/>
-              <line x1="410" y1="285" x2="490" y2="285" stroke="#ffeb3b" stroke-width="3" class="spoke"/>
-              <line x1="422" y1="257" x2="478" y2="313" stroke="#ffeb3b" stroke-width="2" class="spoke"/>
-              <line x1="422" y1="313" x2="478" y2="257" stroke="#ffeb3b" stroke-width="2" class="spoke"/>
-              <circle cx="450" cy="285" r="8" fill="#ffeb3b"/>
+              <circle cx="450" cy="285" r="40" fill="#2d3436" stroke="#ffeb3b" stroke-width="4" />
+              <circle cx="450" cy="285" r="28" fill="#1e272e" />
+              <line x1="450" y1="245" x2="450" y2="325" stroke="#ffeb3b" stroke-width="3" class="spoke" />
+              <line x1="410" y1="285" x2="490" y2="285" stroke="#ffeb3b" stroke-width="3" class="spoke" />
+              <line x1="422" y1="257" x2="478" y2="313" stroke="#ffeb3b" stroke-width="2" class="spoke" />
+              <line x1="422" y1="313" x2="478" y2="257" stroke="#ffeb3b" stroke-width="2" class="spoke" />
+              <circle cx="450" cy="285" r="8" fill="#ffeb3b" />
             </g>
 
             <!-- আইসক্রিম বড় ডিপ ফ্রিজার বক্স -->
-            <rect x="100" y="140" width="270" height="135" rx="12" fill="url(#boxGrad)" stroke="#ff0055" stroke-width="5"/>
-            <rect x="110" y="150" width="250" height="115" rx="8" fill="#fff" opacity="0.7"/>
-            
+            <rect x="100" y="140" width="270" height="135" rx="12" fill="url(#boxGrad)" stroke="#ff0055"
+              stroke-width="5" />
+            <rect x="110" y="150" width="250" height="115" rx="8" fill="#fff" opacity="0.7" />
+
             <!-- বক্সের ওপর রঙিন লাল-গোলাপী ব্যানার প্যানেল -->
-            <rect x="100" y="175" width="270" height="45" fill="#ff0055"/>
-            <text x="235" y="203" font-family="'Galada', cursive" font-size="15" fill="#ffeb3b" text-anchor="middle">টিপু সুলতানের সুপার স্পেশাল আইসক্রিম</text>
+            <rect x="100" y="175" width="270" height="45" fill="#ff0055" />
+            <text x="235" y="203" font-family="'Galada', cursive" font-size="15" fill="#ffeb3b"
+              text-anchor="middle">টিপু সুলতানের সুপার স্পেশাল আইসক্রিম</text>
 
             <!-- আইসক্রিম বক্সের ঢাকনা (অ্যানিমেটেড ওপেনিং) -->
             <g class="box-lid" id="boxLid">
-              <rect x="92" y="125" width="286" height="20" rx="6" fill="url(#vanBodyGrad)" stroke="#ffeb3b" stroke-width="2.5"/>
-              <rect x="210" y="112" width="50" height="15" rx="4" fill="url(#metalGrad)"/>
+              <rect x="92" y="125" width="286" height="20" rx="6" fill="url(#vanBodyGrad)" stroke="#ffeb3b"
+                stroke-width="2.5" />
+              <rect x="210" y="112" width="50" height="15" rx="4" fill="url(#metalGrad)" />
             </g>
 
             <!-- সাইকেল ভ্যানের সিট ও হ্যান্ডেল -->
-            <path d="M 370 200 L 430 170 L 450 240" fill="none" stroke="#2d3436" stroke-width="8" stroke-linecap="round"/>
-            <rect x="360" y="190" width="35" height="12" rx="4" fill="#636e72"/>
-            
+            <path d="M 370 200 L 430 170 L 450 240" fill="none" stroke="#2d3436" stroke-width="8"
+              stroke-linecap="round" />
+            <rect x="360" y="190" width="35" height="12" rx="4" fill="#636e72" />
+
             <!-- ভ্যানের হ্যান্ডেলবার ও ব্রাস বেল -->
-            <path d="M 425 155 L 435 185 L 475 185" fill="none" stroke="#636e72" stroke-width="6"/>
-            <circle cx="435" cy="155" r="12" fill="#ffeb3b" stroke="#ff0055" stroke-width="2.5"/>
+            <path d="M 425 155 L 435 185 L 475 185" fill="none" stroke="#636e72" stroke-width="6" />
+            <circle cx="435" cy="155" r="12" fill="#ffeb3b" stroke="#ff0055" stroke-width="2.5" />
 
             <!-- সামনের জ্বলজ্বলে ল্যাম্প আলো -->
-            <circle cx="485" cy="210" r="40" fill="url(#lampGlow)"/>
-            <path d="M 470 195 L 500 210 L 470 225 Z" fill="#ffeb3b"/>
+            <circle cx="485" cy="210" r="40" fill="url(#lampGlow)" />
+            <path d="M 470 195 L 500 210 L 470 225 Z" fill="#ffeb3b" />
 
             <!-- ছাদ / সামিয়ানা (রঙিন মেলা স্ট্রাইপ ক্যানোপি) -->
-            <path d="M 80 120 L 390 120 L 380 70 L 90 70 Z" fill="#ff007f"/>
+            <path d="M 80 120 L 390 120 L 380 70 L 90 70 Z" fill="#ff007f" />
             <g class="canopy-stripes">
-              <path d="M 90 70 L 120 70 L 110 120 L 80 120 Z" fill="#ffeb3b"/>
-              <path d="M 150 70 L 180 70 L 170 120 L 140 120 Z" fill="#ffeb3b"/>
-              <path d="M 210 70 L 240 70 L 230 120 L 200 120 Z" fill="#ffeb3b"/>
-              <path d="M 270 70 L 300 70 L 290 120 L 260 120 Z" fill="#ffeb3b"/>
-              <path d="M 330 70 L 360 70 L 350 120 L 320 120 Z" fill="#ffeb3b"/>
+              <path d="M 90 70 L 120 70 L 110 120 L 80 120 Z" fill="#ffeb3b" />
+              <path d="M 150 70 L 180 70 L 170 120 L 140 120 Z" fill="#ffeb3b" />
+              <path d="M 210 70 L 240 70 L 230 120 L 200 120 Z" fill="#ffeb3b" />
+              <path d="M 270 70 L 300 70 L 290 120 L 260 120 Z" fill="#ffeb3b" />
+              <path d="M 330 70 L 360 70 L 350 120 L 320 120 Z" fill="#ffeb3b" />
             </g>
 
             <!-- আইসক্রিমওয়ালা মামা ইলাস্ট্রেশন (Funny Animated Vendor) -->
             <g class="vendor-character" id="vendorMama">
-              <circle cx="400" cy="130" r="18" fill="#ffeaa7"/> <!-- মুখ -->
-              <circle cx="394" cy="126" r="2" fill="#2d3436"/> <!-- চোখ ১ -->
-              <circle cx="406" cy="126" r="2" fill="#2d3436"/> <!-- চোখ ২ -->
-              <path d="M 395 133 Q 400 140 405 133" stroke="#ff0055" stroke-width="2" fill="none"/> <!-- হাসি -->
-              <path d="M 382 125 Q 400 115 418 125 Q 400 135 382 125 Z" fill="#2d3436"/> <!-- মোছ -->
-              <path d="M 385 116 Q 400 95 415 116 Z" fill="#ffffff" stroke="#ffeb3b" stroke-width="1.5"/> <!-- সাদা টুপি -->
-              <rect x="388" y="148" width="24" height="35" fill="#ff0055" rx="4"/> <!-- লাল শার্ট -->
+              <circle cx="400" cy="130" r="18" fill="#ffeaa7" /> <!-- মুখ -->
+              <circle cx="394" cy="126" r="2" fill="#2d3436" /> <!-- চোখ ১ -->
+              <circle cx="406" cy="126" r="2" fill="#2d3436" /> <!-- চোখ ২ -->
+              <path d="M 395 133 Q 400 140 405 133" stroke="#ff0055" stroke-width="2" fill="none" /> <!-- হাসি -->
+              <path d="M 382 125 Q 400 115 418 125 Q 400 135 382 125 Z" fill="#2d3436" /> <!-- মোছ -->
+              <path d="M 385 116 Q 400 95 415 116 Z" fill="#ffffff" stroke="#ffeb3b" stroke-width="1.5" />
+              <!-- সাদা টুপি -->
+              <rect x="388" y="148" width="24" height="35" fill="#ff0055" rx="4" /> <!-- লাল শার্ট -->
             </g>
           </g>
         </svg>
@@ -245,10 +277,12 @@
     <section class="bumper-banner">
       <div class="bumper-content">
         <span class="bumper-quote-icon">“</span>
-        <p class="bumper-text" id="bumperQuote">টিপু সুলতানের সুপার স্পেশাল আইসক্রিম — ১০ টাকার ললি, সুরের ভেলায় চলি!</p>
+        <p class="bumper-text" id="bumperQuote">টিপু সুলতানের সুপার স্পেশাল আইসক্রিম — ১০ টাকার ললি, সুরের ভেলায় চলি!
+        </p>
         <button class="bumper-next-btn" id="nextQuoteBtn" type="button" title="পরবর্তী নস্টালজিক উক্তি">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-            <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
+            <path
+              d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z" />
           </svg>
         </button>
       </div>
@@ -263,7 +297,9 @@
         <!-- ঘুরন্ত ক্যাসেট / ডিস্ক আর্ট -->
         <div class="disc-container" id="discContainer">
           <div class="disc-turntable" id="discDeck">
-            <img class="album-cover" id="albumArt" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=300&auto=format&fit=crop&q=80" alt="কভার আর্ট">
+            <img class="album-cover" id="albumArt"
+              src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=300&auto=format&fit=crop&q=80"
+              alt="কভার আর্ট">
             <div class="disc-center-hub"></div>
           </div>
         </div>
@@ -277,7 +313,8 @@
             <span class="time-display" id="currentTime">০:০০</span>
             <div class="seek-bar-wrapper" id="seekBarWrapper">
               <div class="seek-progress" id="seekProgress"></div>
-              <input type="range" class="seek-input" id="seekInput" min="0" max="100" value="0" step="0.1" aria-label="গান আগে-পিছে করুন">
+              <input type="range" class="seek-input" id="seekInput" min="0" max="100" value="0" step="0.1"
+                aria-label="গান আগে-পিছে করুন">
             </div>
             <span class="time-display" id="durationTime">০:০০</span>
           </div>
@@ -288,24 +325,24 @@
           <!-- পূর্ববর্তী -->
           <button class="ctrl-btn" id="prevBtn" type="button" title="পূর্ববর্তী গান">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-              <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+              <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" />
             </svg>
           </button>
 
           <!-- প্লে/পজ প্রধান বোতাম -->
           <button class="ctrl-btn main-play-btn" id="playPauseBtn" type="button" title="প্লে / পজ">
             <svg class="play-icon" viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-              <path d="M8 5v14l11-7z"/>
+              <path d="M8 5v14l11-7z" />
             </svg>
             <svg class="pause-icon hidden" viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
             </svg>
           </button>
 
           <!-- পরবর্তী -->
           <button class="ctrl-btn" id="nextBtn" type="button" title="পরবর্তী গান">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-              <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+              <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" />
             </svg>
           </button>
 
@@ -313,16 +350,18 @@
           <div class="volume-container" title="সাউন্ড কমবেশি করুন">
             <button class="ctrl-btn volume-btn" id="muteToggleBtn" type="button">
               <svg class="vol-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                <path
+                  d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
               </svg>
             </button>
-            <input type="range" class="volume-slider" id="volumeInput" min="0" max="100" value="100" step="1" aria-label="সাউন্ড ভলিউম">
+            <input type="range" class="volume-slider" id="volumeInput" min="0" max="100" value="100" step="1"
+              aria-label="সাউন্ড ভলিউম">
           </div>
 
           <!-- প্লেলিস্ট ড্রয়ার বোতাম -->
           <button class="ctrl-btn playlist-toggle-btn" id="playlistToggleBtn" type="button" title="প্লেলিস্ট খুলুন">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M4 10h12v2H4zm0-4h12v2H4zm0 8h8v2H4zm10 0v6l5-3z"/>
+              <path d="M4 10h12v2H4zm0-4h12v2H4zm0 8h8v2H4zm10 0v6l5-3z" />
             </svg>
           </button>
         </div>
@@ -333,15 +372,16 @@
     <section class="playlist-panel" id="playlistPanel">
       <div class="playlist-header">
         <div class="playlist-title-group">
-          <h3>🎵 টিপু সুলতানের প্লেলিস্ট গান</h3>
+          <h3>🎵 টিপু সুলতানের প্লেলিস্ট</h3>
           <span class="track-count-badge" id="trackCountBadge">০টি গান</span>
         </div>
-        
+
         <!-- সার্চ বার -->
         <div class="search-box">
           <input type="text" id="playlistSearch" placeholder="গান খুঁজুন…" aria-label="গান খুঁজুন">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            <path
+              d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
           </svg>
         </div>
 
@@ -366,4 +406,5 @@
   <script src="https://www.youtube.com/iframe_api"></script>
   <script src="app.js"></script>
 </body>
+
 </html>
